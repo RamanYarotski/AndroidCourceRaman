@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HomeWork2</string>
+    <string name="button_text">Generate numbers!</string>
+    <string name="Second_Activity_button_text"> get results in logcat </string>
+</resources>
