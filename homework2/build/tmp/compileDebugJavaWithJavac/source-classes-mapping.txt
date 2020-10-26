@@ -1,0 +1,14 @@
+com/homework/homework2/BuildConfig.java
+ com.homework.homework2.BuildConfig
+com/homework/homework2/LogD.java
+ com.homework.homework2.LogD
+com/homework/homework2/FirstActivity.java
+ com.homework.homework2.FirstActivity
+ com.homework.homework2.FirstActivity$1
+com/homework/homework2/Calculator.java
+ com.homework.homework2.Calculator
+com/homework/homework2/SecondActivity.java
+ com.homework.homework2.SecondActivity
+ com.homework.homework2.SecondActivity$1
+com/homework/homework2/Generator.java
+ com.homework.homework2.Generator
