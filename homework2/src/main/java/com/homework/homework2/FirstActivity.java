@@ -22,7 +22,7 @@ public class FirstActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Generator generator = new Generator();
                 startActivityForResult(SecondActivity.newInstance(FirstActivity.this,
-                        generator.generateSetOfRandomNumbersRandomSize(2,15,50),
+                        generator.generateSetOfRandomNumbersRandomSize(2, 15, 50),
                         HASH_SET_RANDOM_NUMBERS), 111);
             }
         });

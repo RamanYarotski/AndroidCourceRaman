@@ -43,7 +43,7 @@ public class SecondActivity extends FirstActivity {
                 Intent resultIntent = new Intent();
                 resultIntent.putExtra("RESULT0", numberList);
                 resultIntent.putExtra("RESULT1", sum);
-                resultIntent.putExtra("RESULT2", average );
+                resultIntent.putExtra("RESULT2", average);
                 resultIntent.putExtra("RESULT3", resultNumberThree);
                 setResult(Activity.RESULT_OK, resultIntent);
                 finish();

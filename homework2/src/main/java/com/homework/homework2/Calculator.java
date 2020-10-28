@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Calculator {
 
-    public double sumOfArrayList (ArrayList<Integer> numberList) {
+    public double sumOfArrayList(ArrayList<Integer> numberList) {
         double sum = 0;
         for (int h : numberList) {
             sum = sum + h;
@@ -12,7 +12,7 @@ public class Calculator {
         return sum;
     }
 
-    public double averageOfArrayList (ArrayList<Integer> numberList) {
+    public double averageOfArrayList(ArrayList<Integer> numberList) {
         double sum = 0;
         for (int h : numberList) {
             sum = sum + h;
