@@ -15,7 +15,7 @@ public class SecondActivity extends FirstActivity {
     private double sum;
     private double average;
     private double resultNumberThree;
-    ArrayList<Integer> numberList;
+    private ArrayList<Integer> numberList;
 
     public static Intent newInstance(Context context, ArrayList<Integer> numberList, String name) {
         Intent intent = new Intent(context, SecondActivity.class);
@@ -37,13 +37,13 @@ public class SecondActivity extends FirstActivity {
             @Override
             public void onClick(View v) {
                 Calculator calculator = new Calculator();
-                sum = calculator.sum(numberList);
-                average = calculator.average(numberList);
+                sum = calculator.sumOfArrayList(numberList);
+                average = calculator.averageOfArrayList(numberList);
                 resultNumberThree = calculator.myOperation(numberList);
                 Intent resultIntent = new Intent();
                 resultIntent.putExtra("RESULT0", numberList);
-                resultIntent.putExtra("RESULT1", average);
-                resultIntent.putExtra("RESULT2", sum);
+                resultIntent.putExtra("RESULT1", sum);
+                resultIntent.putExtra("RESULT2", average );
                 resultIntent.putExtra("RESULT3", resultNumberThree);
                 setResult(Activity.RESULT_OK, resultIntent);
                 finish();

@@ -20,10 +20,10 @@ public class FirstActivity extends AppCompatActivity {
         findViewById(R.id.generate_numbers_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Generator generator = new Generator(2, 15, 50);
-
+                Generator generator = new Generator();
                 startActivityForResult(SecondActivity.newInstance(FirstActivity.this,
-                        generator.generateSetOfRandomNumbersRandomSize(), HASH_SET_RANDOM_NUMBERS), 111);
+                        generator.generateSetOfRandomNumbersRandomSize(2,15,50),
+                        HASH_SET_RANDOM_NUMBERS), 111);
             }
         });
         Log.d(TAG, "onCreate");
@@ -32,8 +32,8 @@ public class FirstActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == 111 && resultCode == Activity.RESULT_OK && data != null) {
-            LogD logD = new LogD(data);
-            logD.getLogs();
+            LogD logD = new LogD();
+            logD.getLogs(data);
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
