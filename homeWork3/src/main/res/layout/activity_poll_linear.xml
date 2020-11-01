@@ -9,12 +9,13 @@
     <LinearLayout style="@style/PollLinearStyle">
 
         <ImageView
-            android:id="@+id/imageView1"
+            android:id="@+id/imageAttractions"
             style="@style/PollImageStyle"
+            android:contentDescription="@string/pol_attractions"
             app:srcCompat="@drawable/ic_baseline_folder_24" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/textAttractions"
             style="@style/PollTextStyle"
             android:text="@string/pol_attractions" />
     </LinearLayout>
@@ -22,12 +23,13 @@
     <LinearLayout style="@style/PollLinearStyle">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imageDining"
             style="@style/PollImageStyle"
+            android:contentDescription="@string/pol_dining"
             app:srcCompat="@drawable/ic_baseline_local_dining_24" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textDining"
             style="@style/PollTextStyle"
             android:text="@string/pol_dining" />
 
@@ -36,12 +38,14 @@
     <LinearLayout style="@style/PollLinearStyle">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imageEducation"
             style="@style/PollImageStyle"
+            android:contentDescription="@string/pol_education"
             app:srcCompat="@drawable/ic_baseline_school_24" />
 
+
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textEducation"
             style="@style/PollTextStyle"
             android:text="@string/pol_education" />
 
@@ -50,12 +54,14 @@
     <LinearLayout style="@style/PollLinearStyle">
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/imageFamily"
             style="@style/PollImageStyle"
+            android:contentDescription="@string/pol_family"
             app:srcCompat="@drawable/ic_baseline_people_24" />
 
+
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textFamily"
             style="@style/PollTextStyle"
             android:text="@string/pol_family" />
 
@@ -64,12 +70,14 @@
     <LinearLayout style="@style/PollLinearStyle">
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/imageHealth"
             style="@style/PollImageStyle"
+            android:contentDescription="@string/pol_health"
             app:srcCompat="@drawable/ic_baseline_favorite_24" />
 
+
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/textHealth"
             style="@style/PollTextStyle"
             android:text="@string/pol_health" />
 
@@ -78,12 +86,13 @@
     <LinearLayout style="@style/PollLinearStyle">
 
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/imageOffice"
             style="@style/PollImageStyle"
+            android:contentDescription="@string/pol_office"
             app:srcCompat="@drawable/ic_baseline_business_24" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/textOffice"
             style="@style/PollTextStyle"
             android:text="@string/pol_office" />
 
@@ -92,12 +101,13 @@
     <LinearLayout style="@style/PollLinearStyle">
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/imagePromotions"
             style="@style/PollImageStyle"
+            android:contentDescription="@string/pol_promotions"
             app:srcCompat="@drawable/ic_baseline_shopping_cart_24" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/textPromotions"
             style="@style/PollTextStyle"
             android:text="@string/pol_promotions" />
 
@@ -106,12 +116,14 @@
     <LinearLayout style="@style/PollLinearStyle">
 
         <ImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/imageRadio"
             style="@style/PollImageStyle"
+            android:contentDescription="@string/pol_radio"
             app:srcCompat="@drawable/ic_baseline_radio_24" />
 
+
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/textRadio"
             style="@style/PollTextStyle"
             android:text="@string/pol_radio" />
 
@@ -120,12 +132,14 @@
     <LinearLayout style="@style/PollLinearStyle">
 
         <ImageView
-            android:id="@+id/imageView9"
+            android:id="@+id/imageRecipe"
             style="@style/PollImageStyle"
+            android:contentDescription="@string/pol_recipes"
             app:srcCompat="@drawable/ic_baseline_book_24" />
 
+
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/textRecipe"
             style="@style/PollTextStyle"
             android:text="@string/pol_recipes" />
 
@@ -134,12 +148,13 @@
     <LinearLayout style="@style/PollLinearStyle">
 
         <ImageView
-            android:id="@+id/imageView10"
+            android:id="@+id/imageSports"
             style="@style/PollImageStyle"
+            android:contentDescription="@string/pol_sports"
             app:srcCompat="@drawable/ic_baseline_directions_bike_24" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/textSports"
             style="@style/PollTextStyle"
             android:text="@string/pol_sports" />
 
