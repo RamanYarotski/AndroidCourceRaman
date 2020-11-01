@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">My first view =)</string>
+    <string name="pol_attractions">Attractions</string>
+    <string name="pol_dining">Dining</string>
+    <string name="pol_education">Education</string>
+    <string name="pol_family">Family</string>
+    <string name="pol_health">Health</string>
+    <string name="pol_office">Office</string>
+    <string name="pol_promotions">Promotions</string>
+    <string name="pol_radio">Radio</string>
+    <string name="pol_recipes">Recipes</string>
+    <string name="pol_sports">Sports</string>
 </resources>
