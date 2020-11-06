@@ -33,7 +33,8 @@ public class FirstActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == 111 && resultCode == Activity.RESULT_OK && data != null) {
             LogD logD = new LogD();
-            logD.getLogs(data);
+            logD.getLogs(data.getIntegerArrayListExtra("RESULT0"), data.getDoubleExtra("RESULT1", 0),
+                    data.getDoubleExtra("RESULT2", 0), data.getDoubleExtra("RESULT3", 0));
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
