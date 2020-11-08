@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My first view =)</string>
+    <string name="app_name">HW №3 My first views =)</string>
     <string name="pol_attractions">Attractions</string>
     <string name="pol_dining">Dining</string>
     <string name="pol_education">Education</string>
@@ -10,4 +10,11 @@
     <string name="pol_radio">Radio</string>
     <string name="pol_recipes">Recipes</string>
     <string name="pol_sports">Sports</string>
+    <string name="photo">PHOTO</string>
+    <string name="title">Title</string>
+    <string name="price">Price</string>
+    <string name="location">Location</string>
+    <string name="description">Description</string>
+    <string name="inventory">Inventory</string>
+    <string name="weight">Weight</string>
 </resources>

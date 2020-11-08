@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/photo_in_Constraint"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/grey"
+        android:contentDescription="@string/photo"
+        app:layout_constraintBottom_toTopOf="@id/titleInConstraint"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        style="@style/PhotoTextViewStyle"
+        android:layout_height="wrap_content"
+        android:text="@string/photo"
+        app:layout_constraintBottom_toBottomOf="@id/photo_in_Constraint"
+        app:layout_constraintLeft_toLeftOf="@id/photo_in_Constraint"
+        app:layout_constraintRight_toRightOf="@id/photo_in_Constraint"
+        app:layout_constraintTop_toTopOf="@id/photo_in_Constraint" />
+
+    <ImageView
+        style="@style/PhotoImageViewStyle"
+        android:contentDescription="@string/photo"
+        app:layout_constraintBottom_toBottomOf="@id/photo_in_Constraint"
+        app:layout_constraintRight_toRightOf="@id/photo_in_Constraint"
+        app:srcCompat="@drawable/ic_baseline_camera_alt_24" />
+
+    <EditText
+        android:id="@+id/titleInConstraint"
+        style="@style/PhotoConstraintEditTextStyle"
+        android:autofillHints=""
+        android:hint="@string/title"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/priceInConstraint"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/photo_in_Constraint" />
+
+    <EditText
+        android:id="@+id/priceInConstraint"
+        style="@style/PhotoConstraintEditTextStyle1"
+        android:autofillHints=""
+        android:hint="@string/price"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@id/descriptionInPhotoConstraint"
+        app:layout_constraintRight_toLeftOf="@id/locationInPhotoConstraint"
+        app:layout_constraintTop_toBottomOf="@id/titleInConstraint" />
+
+    <EditText
+        android:id="@+id/locationInPhotoConstraint"
+        style="@style/PhotoConstraintEditTextStyle2"
+        android:autofillHints=""
+        android:drawableEnd="@drawable/ic_baseline_location_on_24"
+        android:hint="@string/location"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@id/priceInConstraint"
+        app:layout_constraintLeft_toRightOf="@id/priceInConstraint"
+        app:layout_constraintTop_toTopOf="@id/priceInConstraint" />
+
+    <EditText
+        android:id="@+id/descriptionInPhotoConstraint"
+        style="@style/PhotoConstraintEditTextStyle"
+        android:autofillHints=""
+        android:hint="@string/description"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/inventoryInPhotoConstraint"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/priceInConstraint" />
+
+    <EditText
+        android:id="@+id/inventoryInPhotoConstraint"
+        style="@style/PhotoConstraintEditTextStyle1"
+        android:layout_marginBottom="70dp"
+        android:autofillHints=""
+        android:hint="@string/inventory"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/weightInPhotoConstraint"
+        app:layout_constraintTop_toBottomOf="@id/descriptionInPhotoConstraint" />
+
+    <EditText
+        android:id="@+id/weightInPhotoConstraint"
+        style="@style/PhotoConstraintEditTextStyle2"
+        android:layout_marginStart="100dp"
+        android:autofillHints=""
+        android:hint="@string/weight"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@id/inventoryInPhotoConstraint"
+        app:layout_constraintLeft_toRightOf="@id/inventoryInPhotoConstraint"
+        app:layout_constraintTop_toTopOf="@id/inventoryInPhotoConstraint" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
