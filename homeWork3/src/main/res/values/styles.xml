@@ -120,4 +120,23 @@
         <item name="layout_constraintRight_toRightOf">parent</item>
         <item name="android:layout_marginEnd">15dp</item>
     </style>
+
+    <style name="SignInLinearStyle">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SignInLinearEditTextStyle">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">25dp</item>
+        <item name="android:paddingEnd">25dp</item>
+        <item name="android:textSize">25sp</item>
+    </style>
 </resources>
