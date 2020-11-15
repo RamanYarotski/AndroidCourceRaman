@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="30dp"
+    android:paddingVertical="15dp">
+
+    <TextView
+        android:id="@+id/signInTextInSignInRelative"
+        style="@style/SignInRelativeTextStyle"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:paddingVertical="40dp"
+        android:text="@string/sign_in"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/emailInSignInRelative"
+        style="@style/SignInRelativeEditTextStyle"
+        android:layout_below="@+id/signInTextInSignInRelative"
+        android:autofillHints=""
+        android:hint="@string/email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/passwordInSignInRelative"
+        style="@style/SignInRelativeEditTextStyle"
+        android:layout_below="@+id/emailInSignInRelative"
+        android:autofillHints=""
+        android:hint="@string/password"
+        android:inputType="textPassword" />
+
+    <CheckBox
+        android:id="@+id/rememberInSignInInRelative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="@string/remember"
+        android:textSize="20sp" />
+
+    <Button
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_alignTop="@+id/rememberInSignInInRelative"
+        android:layout_alignBottom="@+id/rememberInSignInInRelative"
+        android:layout_alignParentEnd="true"
+        android:text="@string/forgot_password"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/signInButtonInSignInRelative"
+        android:layout_width="match_parent"
+        android:layout_height="70sp"
+        android:layout_above="@+id/justSignInTextInSignInRelative"
+        android:background="@drawable/sign_in_button_sign_in"
+        android:text="@string/sign_in"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/justSignInTextInSignInRelative"
+        style="@style/SignInRelativeTextStyle"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="90dp"
+        android:gravity="center|bottom"
+        android:text="@string/just_sign_in"
+        android:textSize="20sp" />
+</RelativeLayout>

@@ -9,7 +9,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in_constraint);
+        setContentView(R.layout.activity_sign_in_relative);
     }
 
 //      Landscape and portrait:
@@ -22,4 +22,5 @@ public class MainActivity extends AppCompatActivity {
 
 //      Only portrait:
 //  activity_photo_relative
+//  activity_sign_in_relative
 }
