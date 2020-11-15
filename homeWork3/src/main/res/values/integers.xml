@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="posts">125</integer>
+    <integer name="followers">20</integer>
+    <integer name="following">22</integer>
+</resources>

@@ -170,4 +170,60 @@
         <item name="android:layout_marginTop">5dp</item>
         <item name="android:layout_marginBottom">5dp</item>
     </style>
+
+    <style name="AndroidInnerLinearLayoutHorizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:layout_marginEnd">15dp</item>
+    </style>
+
+    <style name="AndroidInnerLinearLayoutVertical">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="AndroidTextLinear">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginStart">15dp</item>
+    </style>
+
+    <style name="AndroidTextInInnerVerticalLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="AndroidInnerImageViewInLinearLayoutHorizontal">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="AndroidSpaceForImageViewInLinearLayoutHorizontal">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">0.2</item>
+    </style>
+
+    <style name="AndroidTextInInnerLinearLayoutHorizontal">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">top|center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AndroidSpaceLinear">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
 </resources>
