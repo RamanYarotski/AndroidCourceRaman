@@ -13,7 +13,8 @@
         app:layout_constraintBottom_toTopOf="@id/titleInConstraint"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="3" />
 
     <TextView
         style="@style/PhotoTextViewStyle"
@@ -31,6 +32,20 @@
         app:layout_constraintRight_toRightOf="@id/photo_in_Constraint"
         app:srcCompat="@drawable/ic_baseline_camera_alt_24" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineInPhotoConstraint1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.37" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineInPhotoConstraint2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6" />
+
     <EditText
         android:id="@+id/titleInConstraint"
         style="@style/PhotoConstraintEditTextStyle"
@@ -39,7 +54,8 @@
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@id/priceInConstraint"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/photo_in_Constraint" />
+        app:layout_constraintTop_toBottomOf="@id/photo_in_Constraint"
+        app:layout_constraintVertical_weight="1" />
 
     <EditText
         android:id="@+id/priceInConstraint"
@@ -48,8 +64,9 @@
         android:hint="@string/price"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@id/descriptionInPhotoConstraint"
-        app:layout_constraintRight_toLeftOf="@id/locationInPhotoConstraint"
-        app:layout_constraintTop_toBottomOf="@id/titleInConstraint" />
+        app:layout_constraintRight_toLeftOf="@id/guideLineInPhotoConstraint1"
+        app:layout_constraintTop_toBottomOf="@id/titleInConstraint"
+        app:layout_constraintVertical_weight="1" />
 
     <EditText
         android:id="@+id/locationInPhotoConstraint"
@@ -58,9 +75,8 @@
         android:drawableEnd="@drawable/ic_baseline_location_on_24"
         android:hint="@string/location"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@id/priceInConstraint"
-        app:layout_constraintLeft_toRightOf="@id/priceInConstraint"
-        app:layout_constraintTop_toTopOf="@id/priceInConstraint" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/priceInConstraint"
+        app:layout_constraintLeft_toRightOf="@id/guideLineInPhotoConstraint1" />
 
     <EditText
         android:id="@+id/descriptionInPhotoConstraint"
@@ -70,28 +86,34 @@
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@id/inventoryInPhotoConstraint"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/priceInConstraint" />
+        app:layout_constraintTop_toBottomOf="@id/priceInConstraint"
+        app:layout_constraintVertical_weight="1" />
 
     <EditText
         android:id="@+id/inventoryInPhotoConstraint"
         style="@style/PhotoConstraintEditTextStyle1"
-        android:layout_marginBottom="70dp"
         android:autofillHints=""
         android:hint="@string/inventory"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/weightInPhotoConstraint"
-        app:layout_constraintTop_toBottomOf="@id/descriptionInPhotoConstraint" />
+        app:layout_constraintBottom_toTopOf="@+id/spaceInPhotoConstraint"
+        app:layout_constraintRight_toLeftOf="@id/guideLineInPhotoConstraint1"
+        app:layout_constraintTop_toBottomOf="@id/descriptionInPhotoConstraint"
+        app:layout_constraintVertical_weight="1" />
 
     <EditText
         android:id="@+id/weightInPhotoConstraint"
         style="@style/PhotoConstraintEditTextStyle2"
-        android:layout_marginStart="100dp"
         android:autofillHints=""
         android:hint="@string/weight"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="@id/inventoryInPhotoConstraint"
-        app:layout_constraintLeft_toRightOf="@id/inventoryInPhotoConstraint"
-        app:layout_constraintTop_toTopOf="@id/inventoryInPhotoConstraint" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/inventoryInPhotoConstraint"
+        app:layout_constraintLeft_toRightOf="@id/guideLineInPhotoConstraint2" />
 
+    <Space
+        android:id="@+id/spaceInPhotoConstraint"
+        style="@style/PhotoConstraintEditTextStyle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inventoryInPhotoConstraint"
+        app:layout_constraintVertical_weight="1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

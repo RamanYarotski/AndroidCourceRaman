@@ -82,5 +82,4 @@
         android:text="@string/just_sign_in"
         android:textColor="@color/black"
         android:textSize="20sp" />
-
 </LinearLayout>

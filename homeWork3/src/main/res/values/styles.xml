@@ -34,18 +34,17 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">0.2</item>
-        <item name="android:paddingLeft">20dp</item>
-        <item name="android:paddingEnd">35dp</item>
-        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_gravity">center</item>
     </style>
 
     <style name="PollTableTextStyle">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">0.8</item>
-        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_gravity">center</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">20sp</item>
+
     </style>
 
     <style name="PhotoTextViewStyle">
@@ -96,29 +95,29 @@
 
     <style name="PhotoConstraintEditTextStyle">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_height">0dp</item>
         <item name="layout_constraintRight_toRightOf">parent</item>
-        <item name="android:layout_marginTop">25dp</item>
-        <item name="android:layout_marginBottom">20dp</item>
         <item name="android:layout_marginStart">15dp</item>
         <item name="android:layout_marginEnd">15dp</item>
+        <item name="android:gravity">bottom</item>
     </style>
 
     <style name="PhotoConstraintEditTextStyle1">
-        <item name="android:layout_width">130dp</item>
-        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
         <item name="layout_constraintLeft_toLeftOf">parent</item>
-        <item name="android:layout_marginTop">25dp</item>
-        <item name="android:layout_marginBottom">20dp</item>
-        <item name="android:layout_marginEnd">15dp</item>
+        <item name="android:layout_marginEnd">7.5dp</item>
         <item name="android:layout_marginStart">15dp</item>
+        <item name="android:gravity">bottom</item>
     </style>
 
     <style name="PhotoConstraintEditTextStyle2">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="layout_constraintRight_toRightOf">parent</item>
+        <item name="android:layout_marginStart">7.5dp</item>
         <item name="android:layout_marginEnd">15dp</item>
+        <item name="android:gravity">bottom</item>
     </style>
 
     <style name="SignInLinearStyle">
@@ -138,5 +137,21 @@
         <item name="android:paddingStart">25dp</item>
         <item name="android:paddingEnd">25dp</item>
         <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="SignInConstraintTextStyle">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="SignInConstraintEditTextStyle">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/sign_in_edit_text_background</item>
+        <item name="android:paddingStart">25dp</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
     </style>
 </resources>
