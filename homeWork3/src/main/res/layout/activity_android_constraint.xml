@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/androidProfileName"
+        style="@style/AndroidTextConstraint"
+        android:gravity="center_vertical"
+        android:text="@string/android"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/androidProfileImage"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1.5" />
+
+    <ImageView
+        android:id="@+id/androidProfileImage"
+        android:contentDescription="androidProfileImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toTopOf="@+id/androidUsername"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHorizontal_weight="1.4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/androidNumberOfPosts"
+        app:layout_constraintTop_toBottomOf="@+id/androidProfileName"
+        app:layout_constraintVertical_weight="3" />
+
+    <TextView
+        android:id="@+id/androidNumberOfPosts"
+        style="@style/AndroidMiniTextsConstraint"
+        android:text="125\nPosts"
+        app:layout_constraintBottom_toTopOf="@+id/androidUsername"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/androidProfileImage"
+        app:layout_constraintRight_toLeftOf="@+id/androidNumberOfFollowers"
+        app:layout_constraintTop_toBottomOf="@+id/androidProfileName" />
+
+    <TextView
+        android:id="@+id/androidNumberOfFollowers"
+        style="@style/AndroidMiniTextsConstraint"
+        android:text="20K\nFollowers"
+        app:layout_constraintBottom_toTopOf="@+id/androidUsername"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/androidNumberOfPosts"
+        app:layout_constraintRight_toLeftOf="@id/androidNumberOfFollowing"
+        app:layout_constraintTop_toBottomOf="@+id/androidProfileName" />
+
+    <TextView
+        android:id="@+id/androidNumberOfFollowing"
+        style="@style/AndroidMiniTextsConstraint"
+        android:layout_marginEnd="10dp"
+        android:text="22\nFollowing"
+        app:layout_constraintBottom_toTopOf="@+id/androidUsername"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/androidNumberOfFollowers"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/androidProfileName" />
+
+    <TextView
+        android:id="@+id/androidUsername"
+        style="@style/AndroidTextConstraint"
+        android:text="@string/username"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/androidAddress"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/androidProfileImage"
+        app:layout_constraintVertical_weight="1" />
+
+    <TextView
+        android:id="@+id/androidAddress"
+        style="@style/AndroidTextConstraint"
+        android:text="@string/address"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/androidDescription"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/androidUsername"
+        app:layout_constraintVertical_weight="1" />
+
+    <TextView
+        android:id="@+id/androidDescription"
+        style="@style/AndroidTextConstraint"
+        android:gravity="top"
+        android:text="@string/description"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/androidImageLine1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/androidAddress"
+        app:layout_constraintVertical_weight="1" />
+
+    <ImageView
+        android:id="@+id/androidImageLine1"
+        android:contentDescription="androidImageLine1"
+        style="@style/AndroidLineImageConstraint"
+        android:layout_marginStart="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/Space"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/androidImageLine2"
+        app:layout_constraintTop_toBottomOf="@+id/androidDescription"
+        app:layout_constraintVertical_weight="1.3" />
+
+    <ImageView
+        android:id="@+id/androidImageLine2"
+        android:contentDescription="androidImageLine2"
+        style="@style/AndroidLineImageConstraint"
+        app:layout_constraintBottom_toTopOf="@+id/Space"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/androidImageLine1"
+        app:layout_constraintRight_toLeftOf="@+id/androidImageLine3"
+        app:layout_constraintTop_toBottomOf="@+id/androidDescription" />
+
+    <ImageView
+        android:id="@+id/androidImageLine3"
+        android:contentDescription="androidImageLine3"
+        style="@style/AndroidLineImageConstraint"
+        app:layout_constraintBottom_toTopOf="@+id/Space"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/androidImageLine2"
+        app:layout_constraintRight_toLeftOf="@+id/androidImageLine4"
+        app:layout_constraintTop_toBottomOf="@+id/androidDescription" />
+
+    <ImageView
+        android:id="@+id/androidImageLine4"
+        android:contentDescription="androidImageLine4"
+        style="@style/AndroidLineImageConstraint"
+        app:layout_constraintBottom_toTopOf="@+id/Space"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/androidImageLine3"
+        app:layout_constraintRight_toLeftOf="@+id/androidImageLine5"
+        app:layout_constraintTop_toBottomOf="@+id/androidDescription" />
+
+    <ImageView
+        android:id="@+id/androidImageLine5"
+        android:contentDescription="androidImageLine5"
+        style="@style/AndroidLineImageConstraint"
+        app:layout_constraintBottom_toTopOf="@+id/Space"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/androidImageLine4"
+        app:layout_constraintRight_toLeftOf="@+id/androidImageLine6"
+        app:layout_constraintTop_toBottomOf="@+id/androidDescription" />
+
+    <ImageView
+        android:id="@+id/androidImageLine6"
+        android:contentDescription="androidImageLine6"
+        style="@style/AndroidLineImageConstraint"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/Space"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/androidImageLine5"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/androidDescription" />
+
+    <Space
+        android:id="@+id/Space"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/androidDirections"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/androidImageLine1"
+        app:layout_constraintVertical_weight="1" />
+
+    <TextView
+        android:id="@+id/androidDirections"
+        style="@style/AndroidIconsConstraint"
+        app:drawableTopCompat="@drawable/ic_baseline_directions_24"
+        android:text="@string/directions"
+        app:layout_constraintBottom_toTopOf="@+id/androidImageLine"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/androidCall"
+        app:layout_constraintTop_toBottomOf="@+id/Space"
+        app:layout_constraintVertical_weight="1.6" />
+
+    <TextView
+        android:id="@+id/androidCall"
+        style="@style/AndroidIconsConstraint"
+        app:drawableTopCompat="@drawable/ic_baseline_directions_24"
+        android:text="@string/call"
+        app:layout_constraintBottom_toBottomOf="@+id/androidDirections"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/androidDirections"
+        app:layout_constraintRight_toLeftOf="@+id/androidSave"
+        app:layout_constraintTop_toTopOf="@+id/androidDirections" />
+
+    <TextView
+        android:id="@+id/androidSave"
+        style="@style/AndroidIconsConstraint"
+        app:drawableTopCompat="@drawable/ic_baseline_star_24"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="@+id/androidCall"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/androidCall"
+        app:layout_constraintRight_toLeftOf="@+id/androidWebsite"
+        app:layout_constraintTop_toTopOf="@+id/androidCall" />
+
+    <TextView
+        android:id="@+id/androidWebsite"
+        style="@style/AndroidIconsConstraint"
+        app:drawableTopCompat="@drawable/ic_baseline_link_24"
+        android:text="@string/website"
+        app:layout_constraintBottom_toBottomOf="@+id/androidSave"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/androidSave"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/androidSave" />
+
+
+    <ImageView
+        android:id="@+id/androidImageLine"
+        android:contentDescription="androidImageLine"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSpace1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/androidDirections"
+        app:layout_constraintVertical_weight="0.02" />
+
+    <Space
+        android:id="@+id/bottomSpace1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/androidBottomImage1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/androidImageLine"
+        app:layout_constraintVertical_weight="1" />
+
+    <ImageView
+        android:id="@+id/androidBottomImage1"
+        android:contentDescription="androidBottomImage1"
+        style="@style/AndroidImageConstraint"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSpace2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/androidBottomImage2"
+        app:layout_constraintTop_toBottomOf="@+id/bottomSpace1"
+        app:layout_constraintVertical_weight="3" />
+
+    <ImageView
+        android:id="@+id/androidBottomImage2"
+        android:contentDescription="androidBottomImage2"
+        style="@style/AndroidImageConstraint"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSpace2"
+        app:layout_constraintLeft_toRightOf="@+id/androidBottomImage1"
+        app:layout_constraintRight_toLeftOf="@+id/androidBottomImage3"
+        app:layout_constraintTop_toBottomOf="@+id/bottomSpace1" />
+
+    <ImageView
+        android:id="@+id/androidBottomImage3"
+        android:contentDescription="androidBottomImage3"
+        style="@style/AndroidImageConstraint"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSpace2"
+        app:layout_constraintLeft_toRightOf="@id/androidBottomImage2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottomSpace1" />
+
+    <Space
+        android:id="@+id/bottomSpace2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/androidBottomImage1"
+        app:layout_constraintVertical_weight="1" />
+</androidx.constraintlayout.widget.ConstraintLayout>
