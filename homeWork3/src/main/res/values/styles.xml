@@ -272,4 +272,51 @@
         <item name="android:gravity">center</item>
         <item name="android:textSize">16sp</item>
     </style>
+
+    <style name="AndroidTextRelative">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:gravity">bottom</item>
+    </style>
+
+    <style name="AndroidIconsRelative">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="AndroidImageRelative">
+        <item name="android:layout_width">110dp</item>
+        <item name="android:layout_height">110dp</item>
+        <item name="android:background">@color/grey</item>
+        <item name="android:layout_marginBottom">50dp</item>
+        <item name="android:layout_marginStart">7dp</item>
+        <item name="android:layout_marginEnd">7dp</item>
+    </style>
+
+    <style name="AndroidLineImageRelative">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_marginBottom">60dp</item>
+        <item name="android:background">@color/grey</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+    </style>
+
+    <style name="AndroidMiniTextsRelative">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minWidth">70dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>

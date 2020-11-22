@@ -9,7 +9,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_android_constraint);
+        setContentView(R.layout.activity_android_relative);
     }
 }
 //      Landscape and portrait:
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 //  activity_photo_relative
 //  activity_sign_in_relative
 //  activity_android_constraint
-// На задании 4,2 на activity_android_constraint до меня дошло, что
-// не один и тот же layout должен одонаково хорошо смотреться в гориз и верт располож, а
-// нужно делать отдельно layout-land со своей разметкой для горизонт расположения
-// о Боже, я три недели промучался, но я не сдавался =)
+//  На задании 4,2 на activity_android_constraint до меня дошло, что
+//  не один и тот же layout должен одонаково хорошо смотреться в гориз и верт располож, а
+//  нужно делать отдельно layout-land со своей разметкой для горизонт расположения
+//  о Боже, я три недели промучался, но я не сдавался =)
