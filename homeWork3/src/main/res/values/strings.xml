@@ -39,4 +39,7 @@
     <string name="profileImage">profileImage</string>
     <string name="horizontalLine">horizontalLine</string>
     <string name="anyImage">anyImage</string>
+    <string name="certificated">Certificated</string>
+    <string name="layouts">Layouts</string>
+    <string name="views">Views</string>
 </resources>
