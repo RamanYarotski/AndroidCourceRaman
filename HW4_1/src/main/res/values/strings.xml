@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">HW4_1</string>
+    <string name="contact_name">Name LastName</string>
+    <string name="contact_info">+3751112233</string>
 </resources>
