@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Toolbar
+        style="@style/Toolbar">
+
+        <ImageView
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+    </Toolbar>
+
+    <RadioButton
+        android:id="@+id/PhoneButton"
+        style="@style/MainStyle"
+        android:text="@string/Phone_number" />
+
+    <RadioButton
+        android:id="@+id/EmailButton"
+        style="@style/MainStyle"
+        android:text="@string/Email" />
+
+    <EditText
+        android:id="@+id/nameEditTextView"
+        style="@style/MainStyle"
+        android:layout_marginTop="20dp"
+        android:hint="@string/contact_name" />
+
+    <EditText
+        android:id="@+id/editTextViewInfo"
+        style="@style/MainStyle"
+        android:hint="@string/Phone_number"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+</LinearLayout>

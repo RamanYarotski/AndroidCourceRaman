@@ -6,28 +6,26 @@
     xmlns:app2="http://schemas.android.com/apk/res-auto"
     app:ignore="NamespaceTypo">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@color/purple_500">
+    <Toolbar
+        style="@style/Toolbar">
 
         <SearchView
             android:id="@+id/search_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="7dp"
+            android:layout_margin="10dp"
             android:background="@color/white" />
-    </FrameLayout>
+    </Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RecyclerView"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp" />
+        android:layout_marginTop="55dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/buttonAddContact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
