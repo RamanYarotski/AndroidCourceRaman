@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<item
-    android:id="@+id/okButtonOnActionBar"
-    android:icon="@drawable/ic_baseline_done_24"
+<item android:id="@+id/search_on_menu"
+    android:icon="@drawable/ic_baseline_search_24"
+    android:title="@string/search"
     app:showAsAction="always"
-    android:orderInCategory="3"
-    android:title="@string/okItemInActionBar">
+    app:actionViewClass="android.widget.SearchView">
 </item>
 </menu>

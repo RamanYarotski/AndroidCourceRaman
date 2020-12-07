@@ -9,4 +9,6 @@
     <string name="Remove">Remove</string>
     <string name="okItemInActionBar">OkItemInActionBar</string>
     <string name="backItemOnActionBar">backItemOnActionBar</string>
+    <string name="search">search</string>
+    <string name="contactInfo">contact info</string>
 </resources>

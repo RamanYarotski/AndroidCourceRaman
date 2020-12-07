@@ -1,12 +1,15 @@
 package com.homework.hw4_1;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-public class ActivityAddContact extends MainActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ActivityAddContact extends AppCompatActivity {
     private RadioButton phoneButton;
     private RadioButton emailButton;
     private TextView nameView;
@@ -25,47 +28,46 @@ public class ActivityAddContact extends MainActivity {
 
         nameView = findViewById(R.id.nameEditTextView);
         infoView = findViewById(R.id.editTextViewInfo);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        setTitle(R.string.contact_add);
-        return true;
+        findViewById(R.id.toolbarBackButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(Activity.RESULT_CANCELED);
+                finish();
+            }
+        });
+
+        findViewById(R.id.toolbarSaveButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("Name", nameView.getText().toString());
+                resultIntent.putExtra("Phone or email", infoView.getText().toString());
+
+                if (phoneButton.isChecked() & !emailButton.isChecked()) {
+                    resultIntent.putExtra(
+                            "Contact image", R.drawable.ic_baseline_contact_phone_24);
+                } else if (!phoneButton.isChecked() & emailButton.isChecked()) {
+                    resultIntent.putExtra(
+                            "Contact image", R.drawable.ic_baseline_contact_mail_24);
+                }
+                nameView.setText("");
+                infoView.setText("");
+                setResult(Activity.RESULT_OK, resultIntent);
+                finish();
+            }
+        });
     }
 
     View.OnClickListener radioButtonClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             RadioButton rb = (RadioButton) v;
-            switch (rb.getId()) {
-                case R.id.PhoneButton:
-                    infoView.setHint(R.string.contact_name);
-                    break;
-                case R.id.EmailButton:
-                    infoView.setHint(R.string.Phone_number);
-                    break;
-                default:
-                    break;
+            if (rb.getId() == R.id.PhoneButton) {
+                infoView.setHint(R.string.contact_name);
+            } else if (rb.getId() == R.id.EmailButton){
+                infoView.setHint(R.string.Phone_number);
             }
-        }
-    };
-
-    public void addContact(View view) {
-        if (phoneButton.isChecked() & !emailButton.isChecked()) {
-            itemList.add(new Item(nameView.getText().toString(),
-                    infoView.getText().toString(),
-                    R.drawable.ic_baseline_contact_phone_24));
-            nameView.setText("");
-            infoView.setText("");
-        } else if (!phoneButton.isChecked() & emailButton.isChecked()) {
-            itemList.add(new Item(nameView.getText().toString(),
-                    infoView.getText().toString(),
-                    R.drawable.ic_baseline_contact_mail_24));
-            nameView.setText("");
-            infoView.setText("");
-            adapter.notifyItemChanged(itemList.size() - 1);
-        }
-    }
-
+            }
+        };
 }
