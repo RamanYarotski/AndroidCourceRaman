@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:padding="20dp">
 
     <com.homework.hw4_2_kotlin.CustomButtonView
         android:id="@+id/customView"
@@ -13,5 +14,60 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:centerColor="@color/lilac" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/toastOrSnackBarSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customView"
+        app:layout_constraintBottom_toTopOf="@+id/bottomRightCustomView"
+        android:textOff="@string/T"
+        android:textOn="@string/S"
+        app:showText="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Toast"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/toastOrSnackBarSwitch"
+        app:layout_constraintBaseline_toBaselineOf="@id/toastOrSnackBarSwitch"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/SnackBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/toastOrSnackBarSwitch"
+        app:layout_constraintBaseline_toBaselineOf="@id/toastOrSnackBarSwitch"
+        android:textStyle="italic"/>
+
+    <com.homework.hw4_2_kotlin.CustomButtonView
+        style="@style/miniCustomButtonView"
+        android:id="@+id/topRightCustomView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.homework.hw4_2_kotlin.CustomButtonView
+        style="@style/miniCustomButtonView"
+        android:id="@+id/topLeftCustomView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.homework.hw4_2_kotlin.CustomButtonView
+        style="@style/miniCustomButtonView"
+        android:id="@+id/bottomRightCustomView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.homework.hw4_2_kotlin.CustomButtonView
+        style="@style/miniCustomButtonView"
+        android:id="@+id/bottomLeftCustomView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

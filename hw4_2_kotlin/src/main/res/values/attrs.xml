@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomButtonView">
+        <attr name="firstQuarterColor" format="color" />
+        <attr name="secondQuarterColor" format="color" />
+        <attr name="thirdQuarterColor" format="color" />
+        <attr name="fourthQuarterColor" format="color" />
+        <attr name="centerColor" format="color" />
+        <attr name="borderColor" format="color" />
+        <attr name="borderWidth" format="dimension"/>
+    </declare-styleable>
+</resources>

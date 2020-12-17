@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">HW4_2_Kotlin</string>
+    <string name="T">T</string>
+    <string name="S">S</string>
+    <string name="Toast">Toast</string>
+    <string name="SnackBar">SnackBar</string>
 </resources>
