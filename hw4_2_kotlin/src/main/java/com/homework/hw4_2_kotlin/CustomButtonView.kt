@@ -5,6 +5,8 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
+import android.os.Bundle
+import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
@@ -28,7 +30,7 @@ class CustomButtonView(context: Context, attrs: AttributeSet) :
     // Paint object for coloring and styling
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
-    // Some colors for the background.
+    // Some colors
     private var greenColor = ContextCompat.getColor(context, R.color.green)
     private var yellowColor = ContextCompat.getColor(context, R.color.yellow)
     private var blueColor = ContextCompat.getColor(context, R.color.blue)
@@ -55,8 +57,7 @@ class CustomButtonView(context: Context, attrs: AttributeSet) :
     private var xyOfClick: String? = null
     private var centerX: Float = 0.0f
     private var centerY: Float = 0.0f
-
-    // Face border width in pixels
+    private var indicator: Int = 0
     private var borderWidth = DEFAULT_BORDER_WIDTH
 
     // View size in pixels
@@ -72,14 +73,20 @@ class CustomButtonView(context: Context, attrs: AttributeSet) :
         val typedArray = context.theme.obtainStyledAttributes(attrs, R.styleable.CustomButtonView,
                 0, 0)
         // Extract custom attributes into member variables
-        firstQuarterColor = typedArray.getColor(R.styleable.CustomButtonView_firstQuarterColor, DEFAULT_FIRST_QUARTER_COLOR)
-        secondQuarterColor = typedArray.getColor(R.styleable.CustomButtonView_secondQuarterColor, DEFAULT_SECOND_QUARTER_COLOR)
-        thirdQuarterColor = typedArray.getColor(R.styleable.CustomButtonView_thirdQuarterColor, DEFAULT_THIRD_QUARTER_COLOR)
-        fourthQuarterColor = typedArray.getColor(R.styleable.CustomButtonView_fourthQuarterColor, DEFAULT_FOURTH_QUARTER_COLOR)
-        centerColor = typedArray.getColor(R.styleable.CustomButtonView_centerColor, DEFAULT_CENTER_COLOR)
-        borderColor = typedArray.getColor(R.styleable.CustomButtonView_borderColor, DEFAULT_BORDER_COLOR)
-        borderWidth = typedArray.getDimension(R.styleable.CustomButtonView_borderWidth, DEFAULT_BORDER_WIDTH)
-        // TypedArray objects are shared and must be recycled.
+        firstQuarterColor = typedArray.getColor(R.styleable.CustomButtonView_firstQuarterColor,
+                DEFAULT_FIRST_QUARTER_COLOR)
+        secondQuarterColor = typedArray.getColor(R.styleable.CustomButtonView_secondQuarterColor,
+                DEFAULT_SECOND_QUARTER_COLOR)
+        thirdQuarterColor = typedArray.getColor(R.styleable.CustomButtonView_thirdQuarterColor,
+                DEFAULT_THIRD_QUARTER_COLOR)
+        fourthQuarterColor = typedArray.getColor(R.styleable.CustomButtonView_fourthQuarterColor,
+                DEFAULT_FOURTH_QUARTER_COLOR)
+        centerColor = typedArray.getColor(R.styleable.CustomButtonView_centerColor,
+                DEFAULT_CENTER_COLOR)
+        borderColor = typedArray.getColor(R.styleable.CustomButtonView_borderColor,
+                DEFAULT_BORDER_COLOR)
+        borderWidth = typedArray.getDimension(R.styleable.CustomButtonView_borderWidth,
+                DEFAULT_BORDER_WIDTH)
         typedArray.recycle()
     }
 
@@ -167,32 +174,74 @@ class CustomButtonView(context: Context, attrs: AttributeSet) :
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        var x = event.x - centerX
-        var y = event.y - centerY
+        val x = event.x - centerX
+        val y = event.y - centerY
         radiusOfClick = sqrt(abs(x).pow(2) + abs(y).pow(2))
         if ((event.action == MotionEvent.ACTION_DOWN) && (radiusOfClick <= size * 0.15f)) {
+            xyOfClick = "Соберите одинаковые цвета!\n" +
+                    "Нажаты координаты (x, y): (${x.toInt()}, ${y.toInt()})"
             changeColors()
-            xyOfClick = "Coordinates of clicking(x,y): $x,$y"
+            indicator = 5
             invalidate()
         } else if ((event.action == MotionEvent.ACTION_DOWN) && (radiusOfClick <= size / 2)) {
+            xyOfClick = "Нажаты координаты (x, y): (${x.toInt()}, ${y.toInt()})"
             if ((x > 0) && (y < 0)) {
                 changeFirstQuarterColor()
+                indicator = 1
             }
             if ((x > 0) && (y > 0)) {
                 changeSecondQuarterColor()
+                indicator = 2
             }
             if ((x < 0) && (y > 0)) {
                 changeThirdQuarterColor()
+                indicator = 3
             }
             if ((x < 0) && (y < 0)) {
                 changeFourthQuarterColor()
+                indicator = 4
             }
-            xyOfClick = "Coordinates of clicking(x,y): $x,$y"
+            invalidate()
+        } else if (event.action == MotionEvent.ACTION_DOWN) {
+            xyOfClick = "Мимо =)"
+            indicator = 6
             invalidate()
         }
         return super.onTouchEvent(event)
     }
 
+    fun coordinates() = xyOfClick
+    fun indicator() = indicator
+    fun firstQuarterColor() = firstQuarterColor
+    fun secondQuarterColor() = secondQuarterColor
+    fun thirdQuarterColor() = thirdQuarterColor
+    fun fourthQuarterColor() = fourthQuarterColor
+
+    fun isVictory() = (firstQuarterColor == secondQuarterColor &&
+            thirdQuarterColor == fourthQuarterColor &&
+            firstQuarterColor == fourthQuarterColor)
+
+    override fun onSaveInstanceState(): Parcelable? {
+        val bundle = Bundle()
+        bundle.putInt("firstQuarterColor", firstQuarterColor)
+        bundle.putInt("secondQuarterColor", secondQuarterColor)
+        bundle.putInt("thirdQuarterColor", thirdQuarterColor)
+        bundle.putInt("fourthQuarterColor", fourthQuarterColor)
+        bundle.putParcelable("superState", super.onSaveInstanceState())
+        return bundle
+    }
+
+    override fun onRestoreInstanceState(state: Parcelable) {
+        var viewState = state
+        if (viewState is Bundle) {
+            firstQuarterColor = viewState.getInt("firstQuarterColor")
+            secondQuarterColor = viewState.getInt("secondQuarterColor")
+            thirdQuarterColor = viewState.getInt("thirdQuarterColor")
+            fourthQuarterColor = viewState.getInt("fourthQuarterColor")
+            viewState = viewState.getParcelable("superState")!!
+        }
+        super.onRestoreInstanceState(viewState)
+    }
 }
 
 
