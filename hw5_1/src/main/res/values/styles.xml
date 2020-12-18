@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PollTextStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="PollImageStyle">
+        <item name="android:paddingLeft">25dp</item>
+        <item name="android:paddingEnd">35dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="PollLinearStyle">
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="PollTableStyle">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:weightSum">11</item>
+    </style>
+
+    <style name="PollTableImageStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">0.2</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="PollTableTextStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">0.8</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20sp</item>
+
+    </style>
+
+    <style name="PhotoTextViewStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">70sp</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="PhotoImageViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <style name="PhotoLinearEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">bottom</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:layout_marginEnd">15dp</item>
+    </style>
+
+    <style name="PhotoLinearDoubleEditTextStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:layout_marginStart">15dp</item>
+    </style>
+
+    <style name="PhotoRelativeEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:layout_marginEnd">15dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+
+    <style name="PhotoRelativeEditTextStyle2">
+        <item name="android:layout_width">130dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:layout_marginEnd">15dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+
+    <style name="PhotoConstraintEditTextStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="layout_constraintRight_toRightOf">parent</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:layout_marginEnd">15dp</item>
+        <item name="android:gravity">bottom</item>
+    </style>
+
+    <style name="PhotoConstraintEditTextStyle1">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="layout_constraintLeft_toLeftOf">parent</item>
+        <item name="android:layout_marginEnd">7.5dp</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:gravity">bottom</item>
+    </style>
+
+    <style name="PhotoConstraintEditTextStyle2">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="layout_constraintRight_toRightOf">parent</item>
+        <item name="android:layout_marginStart">7.5dp</item>
+        <item name="android:layout_marginEnd">15dp</item>
+        <item name="android:gravity">bottom</item>
+    </style>
+
+    <style name="SignInLinearStyle">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SignInLinearEditTextStyle">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">25dp</item>
+        <item name="android:paddingEnd">25dp</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="SignInConstraintTextStyle">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="SignInConstraintEditTextStyle">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/sign_in_edit_text_background</item>
+        <item name="android:paddingStart">25dp</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="SignInRelativeTextStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="SignInRelativeEditTextStyle">
+        <item name="android:layout_height">70sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/sign_in_edit_text_background</item>
+        <item name="android:paddingStart">25dp</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="AndroidInnerLinearLayoutHorizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:layout_marginEnd">15dp</item>
+    </style>
+
+    <style name="AndroidInnerLinearLayoutVertical">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="AndroidTextLinear">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginStart">15dp</item>
+    </style>
+
+    <style name="AndroidTextInInnerVerticalLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="AndroidInnerImageViewInLinearLayoutHorizontal">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="AndroidSpaceForImageViewInLinearLayoutHorizontal">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">0.2</item>
+    </style>
+
+    <style name="AndroidTextInInnerLinearLayoutHorizontal">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">top|center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AndroidSpaceLinear">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="AndroidTextConstraint">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:gravity">bottom</item>
+    </style>
+
+    <style name="AndroidIconsConstraint">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="AndroidImageConstraint">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:background">@color/grey</item>
+        <item name="android:layout_marginStart">7dp</item>
+        <item name="android:layout_marginEnd">7dp</item>
+        <item name="layout_constraintDimensionRatio">"1:1"</item>
+    </style>
+
+    <style name="AndroidLineImageConstraint">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">@color/grey</item>
+        <item name="android:layout_marginStart">5dp</item>
+        <item name="android:layout_marginEnd">5dp</item>
+        <item name="layout_constraintDimensionRatio">"1:1"</item>
+    </style>
+
+    <style name="AndroidMiniTextsConstraint">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="AndroidTextRelative">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:gravity">bottom</item>
+    </style>
+
+    <style name="AndroidIconsRelative">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="AndroidImageRelative">
+        <item name="android:layout_width">110dp</item>
+        <item name="android:layout_height">110dp</item>
+        <item name="android:background">@color/grey</item>
+        <item name="android:layout_marginBottom">50dp</item>
+        <item name="android:layout_marginStart">7dp</item>
+        <item name="android:layout_marginEnd">7dp</item>
+    </style>
+
+    <style name="AndroidLineImageRelative">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_marginBottom">60dp</item>
+        <item name="android:background">@color/grey</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+    </style>
+
+    <style name="AndroidMiniTextsRelative">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minWidth">70dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="include_layout_style_in_activity_photo_task5">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="layout_constraintHeight_default">spread</item>
+        <item name="layout_constraintWidth_default">spread</item>
+    </style>
+
+    <style name="texts_in_task5">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="icons_in_task5">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginBottom">15dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="personal_style_of_inner_layouts_in_task5">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@android:drawable/dialog_holo_light_frame</item>
+    </style>
+
+    <style name="guide_line_style_in_task5">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="layout_constraintGuide_percent">0.5</item>
+    </style>
+
+    <style name="grey_view_in_task5">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">70sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/grey</item>
+    </style>
+</resources>
