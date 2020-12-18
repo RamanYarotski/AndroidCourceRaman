@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:paddingHorizontal="5dp"
     android:paddingTop="5dp"
-    android:paddingBottom="80dp">
+    android:paddingBottom="80dp"
+    android:theme="@style/Theme.Omen">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/centerVerticalGuideline"

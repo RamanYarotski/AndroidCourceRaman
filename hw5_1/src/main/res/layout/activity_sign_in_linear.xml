@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingHorizontal="20dp">
+    android:paddingHorizontal="20dp"
+    android:theme="@style/Theme.Aquamarine">
 
     <TextView
         style="@style/SignInLinearStyle"
