@@ -6,12 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class ActivityEditContact extends AppCompatActivity {
+public class ActivityEditContact extends MainActivity {
     private TextView nameView;
     private TextView infoView;
-    private int itemNumber;
+    private Contact contact;
+    private int contactNumber;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,40 +22,35 @@ public class ActivityEditContact extends AppCompatActivity {
 
         final Intent intent = getIntent();
         if (intent != null) {
-            nameView.setText(intent.getStringExtra("nameView"));
-            infoView.setText(intent.getStringExtra("infoView"));
-            itemNumber = intent.getIntExtra("ItemNumber",0);
+            contact = (Contact) intent.getSerializableExtra(CONTACT_FOR_CHANGES);
+            nameView.setText(contact.getName());
+            infoView.setText(contact.getInfo());
+            contactNumber = intent.getIntExtra(CONTACT_NUMBER, 0);
         }
 
-        findViewById(R.id.toolbarSaveButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        findViewById(R.id.toolbarSaveButton).setOnClickListener(v -> {
                 Intent resultIntent = new Intent();
-                resultIntent.putExtra("Name", nameView.getText().toString());
-                resultIntent.putExtra("Phone or email", infoView.getText().toString());
-                resultIntent.putExtra("ItemNumber", itemNumber);
+                resultIntent.putExtra(MODIFIED_CONTACT,
+                        new Contact(nameView.getText().toString(),
+                                infoView.getText().toString(),
+                                contact.getInfoType()));
+                resultIntent.putExtra(CONTACT_NUMBER, contactNumber);
                 nameView.setText("");
                 infoView.setText("");
                 setResult(Activity.RESULT_OK, resultIntent);
                 finish();
-            }
         });
 
-        findViewById(R.id.toolbarBackButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setResult(Activity.RESULT_CANCELED);
-                finish();
-            }
+        findViewById(R.id.toolbarBackButton).setOnClickListener(v -> {
+            setResult(Activity.RESULT_CANCELED);
+            finish();
         });
 
-        findViewById(R.id.removeButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                nameView.setText("");
-                infoView.setText("");
-            }
+        findViewById(R.id.removeButton).setOnClickListener(v -> {
+            nameView.setText("");
+            infoView.setText("");
         });
     }
+
 }
 

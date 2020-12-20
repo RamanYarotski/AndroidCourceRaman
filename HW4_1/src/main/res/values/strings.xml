@@ -11,4 +11,5 @@
     <string name="backItemOnActionBar">backItemOnActionBar</string>
     <string name="search">search</string>
     <string name="contactInfo">contact info</string>
+    <string name="contactImage">contact image</string>
 </resources>
