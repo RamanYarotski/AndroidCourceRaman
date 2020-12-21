@@ -27,25 +27,27 @@ public class MainActivity extends AppCompatActivity {
     private ContactListAdapter adapter;
     private RecyclerView recyclerView;
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        menuItem = menu.findItem(R.id.search_on_menu);
-        searchView = (SearchView) menuItem.getActionView();
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu, menu);
+//        menuItem = menu.findItem(R.id.search_on_menu);
+//        searchView = (SearchView) menuItem.getActionView();
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                adapter.getFilter().filter(newText);
-                return false;
-            }
-        });
-        return true;
-    }
+//        searchView.findViewById(R.id.searchContact);
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//                adapter.getFilter().filter(newText);
+//                return false;
+//            }
+//        });
+//        return true;
+//    }
 
     public interface ListContactActionListener {
         void onContactClicked(int number);
@@ -80,6 +82,21 @@ public class MainActivity extends AppCompatActivity {
                         123);
             }
         });
+
+        searchView.findViewById(R.id.searchContact);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
     }
 
     @Override

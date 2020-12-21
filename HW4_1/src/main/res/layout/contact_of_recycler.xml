@@ -12,6 +12,7 @@
         android:layout_height="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/contactName"
         tools:src="@drawable/ic_baseline_contact_phone_24"
         android:contentDescription="@string/contactImage"/>
 
@@ -24,6 +25,7 @@
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/contactImage"
         app:layout_constraintTop_toTopOf="@+id/contactImage"
+        app:layout_constraintBottom_toTopOf="@+id/contactInfo"
         tools:text="@string/contact_name" />
 
     <TextView
@@ -35,5 +37,6 @@
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="@+id/contactName"
         app:layout_constraintTop_toBottomOf="@+id/contactName"
+        app:layout_constraintBottom_toBottomOf="@+id/contactImage"
         tools:text="@string/contact_info" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,7 +28,7 @@ public class ActivityEditContact extends MainActivity {
             contactNumber = intent.getIntExtra(CONTACT_NUMBER, 0);
         }
 
-        findViewById(R.id.toolbarSaveButton).setOnClickListener(v -> {
+        findViewById(R.id.toolbarEditSaveButton).setOnClickListener(v -> {
                 Intent resultIntent = new Intent();
                 resultIntent.putExtra(MODIFIED_CONTACT,
                         new Contact(nameView.getText().toString(),
@@ -41,7 +41,7 @@ public class ActivityEditContact extends MainActivity {
                 finish();
         });
 
-        findViewById(R.id.toolbarBackButton).setOnClickListener(v -> {
+        findViewById(R.id.toolbarEditBackButton).setOnClickListener(v -> {
             setResult(Activity.RESULT_CANCELED);
             finish();
         });
