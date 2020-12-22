@@ -14,6 +14,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val customView: CustomButtonView = findViewById(R.id.customView)
+        customView.kp = object:myClicklListener{
+            override fun action() {
+                TODO("Not yet implemented")
+            }
+        }
         val switchMaterial = findViewById<SwitchMaterial>(R.id.toastOrSnackBarSwitch)
 
         fun congratulation() {

@@ -15,6 +15,10 @@ import kotlin.math.abs
 import kotlin.math.pow
 import kotlin.math.sqrt
 
+interface myClicklListener {
+    fun action ()
+}
+
 class CustomButtonView(context: Context, attrs: AttributeSet) :
         View(context, attrs) {
     companion object {
@@ -26,6 +30,7 @@ class CustomButtonView(context: Context, attrs: AttributeSet) :
         private const val DEFAULT_BORDER_COLOR = Color.BLACK
         private const val DEFAULT_BORDER_WIDTH = 1.0f
     }
+    var  kp : myClicklListener? = null
 
     // Paint object for coloring and styling
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -176,6 +181,7 @@ class CustomButtonView(context: Context, attrs: AttributeSet) :
     override fun onTouchEvent(event: MotionEvent): Boolean {
         val x = event.x - centerX
         val y = event.y - centerY
+        kp?.action()
         radiusOfClick = sqrt(abs(x).pow(2) + abs(y).pow(2))
         if ((event.action == MotionEvent.ACTION_DOWN) && (radiusOfClick <= size * 0.15f)) {
             xyOfClick = "Соберите одинаковые цвета!\n" +
