@@ -5,21 +5,28 @@
     android:layout_height="match_parent"
     android:paddingHorizontal="5dp"
     android:paddingTop="5dp"
-    android:paddingBottom="80dp">
+    android:paddingBottom="80dp"
+    android:theme="@style/Theme.Omen">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/centerVerticalGuideline"
-        style="@style/guide_line_style_in_task5"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:layout_constraintGuide_percent="0.5"
         android:orientation="vertical" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/centerHorizontalGuideline"
-        style="@style/guide_line_style_in_task5"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:layout_constraintGuide_percent="0.5"
         android:orientation="horizontal" />
 
     <include
         android:id="@+id/include_layout_certificated_in_photo"
         style="@style/include_layout_style_in_activity_photo_task5"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
         layout="@layout/layout_certificated_in_photo"
         android:background="@color/grey"
         app:layout_constraintBottom_toTopOf="@+id/centerHorizontalGuideline"
@@ -30,6 +37,8 @@
     <include
         android:id="@+id/include_layout_layouts_in_photo"
         style="@style/include_layout_style_in_activity_photo_task5"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
         layout="@layout/layout_layouts_in_photo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/centerVerticalGuideline"
@@ -39,6 +48,8 @@
     <include
         android:id="@+id/include_layout_views_in_photo"
         style="@style/include_layout_style_in_activity_photo_task5"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
         layout="@layout/layout_views_in_photo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

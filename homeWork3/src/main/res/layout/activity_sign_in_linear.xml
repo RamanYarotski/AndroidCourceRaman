@@ -3,10 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingHorizontal="20dp">
+    android:paddingHorizontal="20dp"
+    android:theme="@style/Theme.Aquamarine">
 
     <TextView
         style="@style/SignInLinearStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:layout_weight="2"
         android:gravity="center_vertical"
         android:text="@string/sign_in"
@@ -16,6 +19,8 @@
     <EditText
         android:id="@+id/editTextEmail"
         style="@style/SignInLinearEditTextStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:layout_weight="1"
         android:autofillHints=""
         android:background="@drawable/sign_in_edit_text_background"
@@ -25,6 +30,8 @@
     <EditText
         android:id="@+id/editTextPassword"
         style="@style/SignInLinearEditTextStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:layout_weight="1"
         android:autofillHints=""
         android:background="@drawable/sign_in_edit_text_background"
@@ -38,6 +45,8 @@
 
     <LinearLayout
         style="@style/SignInLinearStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:layout_weight="3"
         android:orientation="horizontal">
 
@@ -59,14 +68,16 @@
             android:layout_weight="1"
             android:gravity="top"
             android:text="@string/forgot_password"
-            android:textAllCaps="false"
+            android:textAllCaps="true"
             android:textColor="@color/black"
-            android:textSize="19sp"
+            android:textSize="13sp"
             android:textStyle="bold" />
     </LinearLayout>
 
     <Button
         style="@style/SignInLinearStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:layout_weight="1.2"
         android:background="@drawable/sign_in_button_sign_in"
         android:gravity="center"
@@ -77,6 +88,8 @@
 
     <TextView
         style="@style/SignInLinearStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:layout_weight="2"
         android:gravity="bottom|center_horizontal"
         android:text="@string/just_sign_in"

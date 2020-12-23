@@ -4,42 +4,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="11">
+    android:weightSum="11"
+    android:theme="@style/Theme.Omen">
 
-    <LinearLayout style="@style/PollLinearStyle">
+    <LinearLayout style="@style/PollLinearStyle"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
         <ImageView
             android:id="@+id/imageAttractions"
             style="@style/PollImageStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             android:contentDescription="@string/pol_attractions"
             app:srcCompat="@drawable/ic_baseline_folder_24" />
 
         <TextView
             android:id="@+id/textAttractions"
             style="@style/PollTextStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:text="@string/pol_attractions" />
     </LinearLayout>
 
-    <LinearLayout style="@style/PollLinearStyle">
+    <LinearLayout style="@style/PollLinearStyle"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
         <ImageView
             android:id="@+id/imageDining"
             style="@style/PollImageStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             android:contentDescription="@string/pol_dining"
             app:srcCompat="@drawable/ic_baseline_local_dining_24" />
 
         <TextView
             android:id="@+id/textDining"
             style="@style/PollTextStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:text="@string/pol_dining" />
 
     </LinearLayout>
 
-    <LinearLayout style="@style/PollLinearStyle">
+    <LinearLayout style="@style/PollLinearStyle"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
         <ImageView
             android:id="@+id/imageEducation"
             style="@style/PollImageStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             android:contentDescription="@string/pol_education"
             app:srcCompat="@drawable/ic_baseline_school_24" />
 
@@ -47,15 +64,21 @@
         <TextView
             android:id="@+id/textEducation"
             style="@style/PollTextStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:text="@string/pol_education" />
 
     </LinearLayout>
 
-    <LinearLayout style="@style/PollLinearStyle">
+    <LinearLayout style="@style/PollLinearStyle"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
         <ImageView
             android:id="@+id/imageFamily"
             style="@style/PollImageStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             android:contentDescription="@string/pol_family"
             app:srcCompat="@drawable/ic_baseline_people_24" />
 
@@ -63,15 +86,21 @@
         <TextView
             android:id="@+id/textFamily"
             style="@style/PollTextStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:text="@string/pol_family" />
 
     </LinearLayout>
 
-    <LinearLayout style="@style/PollLinearStyle">
+    <LinearLayout style="@style/PollLinearStyle"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
         <ImageView
             android:id="@+id/imageHealth"
             style="@style/PollImageStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             android:contentDescription="@string/pol_health"
             app:srcCompat="@drawable/ic_baseline_favorite_24" />
 
@@ -79,45 +108,63 @@
         <TextView
             android:id="@+id/textHealth"
             style="@style/PollTextStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:text="@string/pol_health" />
 
     </LinearLayout>
 
-    <LinearLayout style="@style/PollLinearStyle">
+    <LinearLayout style="@style/PollLinearStyle"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
         <ImageView
             android:id="@+id/imageOffice"
             style="@style/PollImageStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             android:contentDescription="@string/pol_office"
             app:srcCompat="@drawable/ic_baseline_business_24" />
 
         <TextView
             android:id="@+id/textOffice"
             style="@style/PollTextStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:text="@string/pol_office" />
 
     </LinearLayout>
 
-    <LinearLayout style="@style/PollLinearStyle">
+    <LinearLayout style="@style/PollLinearStyle"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
         <ImageView
             android:id="@+id/imagePromotions"
             style="@style/PollImageStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             android:contentDescription="@string/pol_promotions"
             app:srcCompat="@drawable/ic_baseline_shopping_cart_24" />
 
         <TextView
             android:id="@+id/textPromotions"
             style="@style/PollTextStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:text="@string/pol_promotions" />
 
     </LinearLayout>
 
-    <LinearLayout style="@style/PollLinearStyle">
+    <LinearLayout style="@style/PollLinearStyle"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
         <ImageView
             android:id="@+id/imageRadio"
             style="@style/PollImageStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             android:contentDescription="@string/pol_radio"
             app:srcCompat="@drawable/ic_baseline_radio_24" />
 
@@ -125,15 +172,21 @@
         <TextView
             android:id="@+id/textRadio"
             style="@style/PollTextStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:text="@string/pol_radio" />
 
     </LinearLayout>
 
-    <LinearLayout style="@style/PollLinearStyle">
+    <LinearLayout style="@style/PollLinearStyle"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
         <ImageView
             android:id="@+id/imageRecipe"
             style="@style/PollImageStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             android:contentDescription="@string/pol_recipes"
             app:srcCompat="@drawable/ic_baseline_book_24" />
 
@@ -141,21 +194,29 @@
         <TextView
             android:id="@+id/textRecipe"
             style="@style/PollTextStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:text="@string/pol_recipes" />
 
     </LinearLayout>
 
-    <LinearLayout style="@style/PollLinearStyle">
+    <LinearLayout style="@style/PollLinearStyle"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
         <ImageView
             android:id="@+id/imageSports"
             style="@style/PollImageStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             android:contentDescription="@string/pol_sports"
             app:srcCompat="@drawable/ic_baseline_directions_bike_24" />
 
         <TextView
             android:id="@+id/textSports"
             style="@style/PollTextStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:text="@string/pol_sports" />
 
     </LinearLayout>
