@@ -9,12 +9,15 @@
     <ImageView
         android:id="@+id/icon_photo"
         style="@style/PhotoImageViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:contentDescription="@string/photo"
         app:srcCompat="@drawable/ic_baseline_camera_alt_24" />
 
     <TextView
         style="@style/PhotoTextViewStyle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/photo" />

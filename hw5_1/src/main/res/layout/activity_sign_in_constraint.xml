@@ -9,6 +9,8 @@
     <TextView
         android:id="@+id/signInTextInSignInConstraint"
         style="@style/SignInConstraintTextStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:gravity="center_vertical"
         android:text="@string/sign_in"
         android:textSize="30sp"
@@ -21,6 +23,8 @@
     <EditText
         android:id="@+id/emailInSignInConstraint"
         style="@style/SignInConstraintEditTextStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:autofillHints=""
         android:hint="@string/email"
         android:inputType="textEmailAddress"
@@ -32,6 +36,8 @@
     <EditText
         android:id="@+id/passwordInSignInConstraint"
         style="@style/SignInConstraintEditTextStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:autofillHints=""
         android:hint="@string/password"
         android:inputType="textPassword"
@@ -91,6 +97,8 @@
     <TextView
         android:id="@+id/justSignInTextInSignInConstraint"
         style="@style/SignInConstraintTextStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:gravity="center|bottom"
         android:text="@string/just_sign_in"
         android:textSize="20sp"

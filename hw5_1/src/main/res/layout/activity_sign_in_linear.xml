@@ -8,6 +8,8 @@
 
     <TextView
         style="@style/SignInLinearStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:layout_weight="2"
         android:gravity="center_vertical"
         android:text="@string/sign_in"
@@ -17,6 +19,8 @@
     <EditText
         android:id="@+id/editTextEmail"
         style="@style/SignInLinearEditTextStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:layout_weight="1"
         android:autofillHints=""
         android:background="@drawable/sign_in_edit_text_background"
@@ -26,6 +30,8 @@
     <EditText
         android:id="@+id/editTextPassword"
         style="@style/SignInLinearEditTextStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:layout_weight="1"
         android:autofillHints=""
         android:background="@drawable/sign_in_edit_text_background"
@@ -39,6 +45,8 @@
 
     <LinearLayout
         style="@style/SignInLinearStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:layout_weight="3"
         android:orientation="horizontal">
 
@@ -68,6 +76,8 @@
 
     <Button
         style="@style/SignInLinearStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:layout_weight="1.2"
         android:background="@drawable/sign_in_button_sign_in"
         android:gravity="center"
@@ -78,6 +88,8 @@
 
     <TextView
         style="@style/SignInLinearStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:layout_weight="2"
         android:gravity="bottom|center_horizontal"
         android:text="@string/just_sign_in"

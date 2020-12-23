@@ -7,6 +7,8 @@
     <TextView
         android:id="@+id/androidProfileName"
         style="@style/AndroidTextRelative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -29,6 +31,8 @@
     <TextView
         android:id="@+id/androidNumberOfPosts"
         style="@style/AndroidMiniTextsRelative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignTop="@+id/androidProfileImage"
         android:layout_alignBottom="@+id/androidProfileImage"
         android:layout_toEndOf="@+id/androidProfileImage"
@@ -37,6 +41,8 @@
     <TextView
         android:id="@+id/androidNumberOfFollowers"
         style="@style/AndroidMiniTextsRelative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignTop="@+id/androidNumberOfPosts"
         android:layout_alignBottom="@+id/androidNumberOfPosts"
         android:layout_toEndOf="@+id/androidNumberOfPosts"
@@ -45,6 +51,8 @@
     <TextView
         android:id="@+id/androidNumberOfFollowing"
         style="@style/AndroidMiniTextsRelative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignTop="@+id/androidNumberOfFollowers"
         android:layout_alignBottom="@+id/androidNumberOfFollowers"
         android:layout_alignParentEnd="true"
@@ -55,6 +63,8 @@
     <TextView
         android:id="@+id/androidUsername"
         style="@style/AndroidTextRelative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/androidProfileImage"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -65,6 +75,8 @@
     <TextView
         android:id="@+id/androidAddress"
         style="@style/AndroidTextRelative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/androidUsername"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -74,6 +86,8 @@
     <TextView
         android:id="@+id/androidDescription"
         style="@style/AndroidTextRelative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/androidAddress"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -84,6 +98,8 @@
     <ImageView
         android:id="@+id/androidImageLine1"
         style="@style/AndroidLineImageRelative"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_below="@+id/androidDescription"
         android:layout_alignParentStart="true"
         android:layout_marginStart="20dp"
@@ -92,6 +108,8 @@
     <ImageView
         android:id="@+id/androidImageLine2"
         style="@style/AndroidLineImageRelative"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_below="@+id/androidDescription"
         android:layout_toEndOf="@+id/androidImageLine1"
         android:contentDescription="androidImageLine2" />
@@ -99,6 +117,8 @@
     <ImageView
         android:id="@+id/androidImageLine3"
         style="@style/AndroidLineImageRelative"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_below="@+id/androidDescription"
         android:layout_toEndOf="@+id/androidImageLine2"
         android:contentDescription="androidImageLine3" />
@@ -106,6 +126,8 @@
     <ImageView
         android:id="@+id/androidImageLine4"
         style="@style/AndroidLineImageRelative"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_below="@+id/androidDescription"
         android:layout_toEndOf="@+id/androidImageLine3"
         android:contentDescription="androidImageLine4" />
@@ -113,6 +135,8 @@
     <ImageView
         android:id="@+id/androidImageLine5"
         style="@style/AndroidLineImageRelative"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_below="@+id/androidDescription"
         android:layout_toEndOf="@+id/androidImageLine4"
         android:contentDescription="androidImageLine5" />
@@ -120,6 +144,8 @@
     <ImageView
         android:id="@+id/androidImageLine6"
         style="@style/AndroidLineImageRelative"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_below="@+id/androidDescription"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="20dp"
@@ -129,6 +155,8 @@
     <TextView
         android:id="@+id/androidDirections"
         style="@style/AndroidIconsRelative"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/androidImageLine1"
         android:layout_alignParentStart="true"
         android:text="@string/directions"
@@ -137,6 +165,8 @@
     <TextView
         android:id="@+id/androidCall"
         style="@style/AndroidIconsRelative"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:layout_alignTop="@+id/androidDirections"
         android:layout_alignBottom="@+id/androidDirections"
         android:layout_toEndOf="@+id/androidDirections"
@@ -146,6 +176,8 @@
     <TextView
         android:id="@+id/androidSave"
         style="@style/AndroidIconsRelative"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:layout_alignTop="@+id/androidCall"
         android:layout_alignBottom="@+id/androidCall"
         android:layout_toEndOf="@+id/androidCall"
@@ -155,6 +187,8 @@
     <TextView
         android:id="@+id/androidWebsite"
         style="@style/AndroidIconsRelative"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:layout_alignTop="@+id/androidSave"
         android:layout_alignBottom="@+id/androidSave"
         android:layout_alignParentEnd="true"
@@ -175,6 +209,8 @@
     <ImageView
         android:id="@+id/androidBottomImage1"
         style="@style/AndroidImageRelative"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="20dp"
@@ -183,6 +219,8 @@
     <ImageView
         android:id="@+id/androidBottomImage2"
         style="@style/AndroidImageRelative"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:contentDescription="androidBottomImage2" />
@@ -190,6 +228,8 @@
     <ImageView
         android:id="@+id/androidBottomImage3"
         style="@style/AndroidImageRelative"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="20dp"
