@@ -53,10 +53,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <TextView
                 style="@style/AndroidTextInInnerVerticalLayout"
@@ -76,10 +76,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <TextView
                 style="@style/AndroidTextInInnerVerticalLayout"
@@ -133,81 +133,74 @@
         android:layout_weight="0.2">
 
         <ImageView
-            style="@style/AndroidInnerImageViewInLinearLayoutHorizontal"
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@color/grey"
             android:contentDescription="@string/anyImage" />
 
-        <Space style="@style/AndroidSpaceForImageViewInLinearLayoutHorizontal"
-            android:layout_width="0dp"
-            android:layout_weight="0.2"
-            android:layout_height="match_parent"/>
-
-        <ImageView
-            style="@style/AndroidInnerImageViewInLinearLayoutHorizontal"
-            android:layout_weight="1"
+        <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="0.2" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@color/grey"
             android:contentDescription="@string/anyImage" />
 
-        <Space style="@style/AndroidSpaceForImageViewInLinearLayoutHorizontal"
-            android:layout_width="0dp"
-            android:layout_weight="0.2"
-            android:layout_height="match_parent"/>
-
-        <ImageView
-            style="@style/AndroidInnerImageViewInLinearLayoutHorizontal"
-            android:layout_weight="1"
+        <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="0.2" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@color/grey"
             android:contentDescription="@string/anyImage" />
 
-        <Space style="@style/AndroidSpaceForImageViewInLinearLayoutHorizontal"
-            android:layout_weight="0.2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"/>
-
-        <ImageView
-            style="@style/AndroidInnerImageViewInLinearLayoutHorizontal"
-            android:layout_weight="1"
+        <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="0.2" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@color/grey"
             android:contentDescription="@string/anyImage" />
 
-        <Space style="@style/AndroidSpaceForImageViewInLinearLayoutHorizontal"
-            android:layout_weight="0.2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"/>
-
-        <ImageView
-            style="@style/AndroidInnerImageViewInLinearLayoutHorizontal"
-            android:layout_weight="1"
+        <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="0.2" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@color/grey"
             android:contentDescription="@string/anyImage" />
 
-        <Space style="@style/AndroidSpaceForImageViewInLinearLayoutHorizontal"
-            android:layout_weight="0.2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"/>
-
-        <ImageView
-            style="@style/AndroidInnerImageViewInLinearLayoutHorizontal"
-            android:layout_weight="1"
+        <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="0.2" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@color/grey"
             android:contentDescription="@string/anyImage" />
     </LinearLayout>
 
     <Space
-        style="@style/AndroidSpaceLinear"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.2" />
@@ -258,7 +251,6 @@
         android:contentDescription="@string/horizontalLine" />
 
     <Space
-        style="@style/AndroidSpaceLinear"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.2" />
@@ -270,42 +262,38 @@
         android:layout_weight="0.5">
 
         <ImageView
-            style="@style/AndroidInnerImageViewInLinearLayoutHorizontal"
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@color/grey"
             android:contentDescription="@string/anyImage" />
 
-        <Space style="@style/AndroidSpaceForImageViewInLinearLayoutHorizontal"
-            android:layout_weight="0.2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"/>
-
-        <ImageView
-            style="@style/AndroidInnerImageViewInLinearLayoutHorizontal"
-            android:layout_weight="1"
+        <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="0.2" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@color/grey"
             android:contentDescription="@string/anyImage" />
 
-        <Space style="@style/AndroidSpaceForImageViewInLinearLayoutHorizontal"
-            android:layout_weight="0.2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"/>
-
-        <ImageView
-            style="@style/AndroidInnerImageViewInLinearLayoutHorizontal"
-            android:layout_weight="1"
+        <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="0.2" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@color/grey"
             android:contentDescription="@string/anyImage" />
     </LinearLayout>
 
     <Space
-        style="@style/AndroidSpaceLinear"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.2" />
