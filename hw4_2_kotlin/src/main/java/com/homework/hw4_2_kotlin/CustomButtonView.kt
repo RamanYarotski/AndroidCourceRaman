@@ -15,8 +15,8 @@ import kotlin.math.abs
 import kotlin.math.pow
 import kotlin.math.sqrt
 
-interface myClicklListener {
-    fun action ()
+interface ICustomListener {
+    fun notification(colorOfClick: Int, message: String?, isSnackBar: Boolean)
 }
 
 class CustomButtonView(context: Context, attrs: AttributeSet) :
@@ -30,7 +30,8 @@ class CustomButtonView(context: Context, attrs: AttributeSet) :
         private const val DEFAULT_BORDER_COLOR = Color.BLACK
         private const val DEFAULT_BORDER_WIDTH = 1.0f
     }
-    var  kp : myClicklListener? = null
+
+    var customListener: ICustomListener? = null
 
     // Paint object for coloring and styling
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -62,7 +63,7 @@ class CustomButtonView(context: Context, attrs: AttributeSet) :
     private var xyOfClick: String? = null
     private var centerX: Float = 0.0f
     private var centerY: Float = 0.0f
-    private var indicator: Int = 0
+    private var colorOfClick: Int = 0
     private var borderWidth = DEFAULT_BORDER_WIDTH
 
     // View size in pixels
@@ -181,47 +182,42 @@ class CustomButtonView(context: Context, attrs: AttributeSet) :
     override fun onTouchEvent(event: MotionEvent): Boolean {
         val x = event.x - centerX
         val y = event.y - centerY
-        kp?.action()
         radiusOfClick = sqrt(abs(x).pow(2) + abs(y).pow(2))
         if ((event.action == MotionEvent.ACTION_DOWN) && (radiusOfClick <= size * 0.15f)) {
             xyOfClick = "Соберите одинаковые цвета!\n" +
                     "Нажаты координаты (x, y): (${x.toInt()}, ${y.toInt()})"
             changeColors()
-            indicator = 5
+            colorOfClick = whiteColor
             invalidate()
         } else if ((event.action == MotionEvent.ACTION_DOWN) && (radiusOfClick <= size / 2)) {
             xyOfClick = "Нажаты координаты (x, y): (${x.toInt()}, ${y.toInt()})"
             if ((x > 0) && (y < 0)) {
                 changeFirstQuarterColor()
-                indicator = 1
+                colorOfClick = firstQuarterColor
             }
             if ((x > 0) && (y > 0)) {
                 changeSecondQuarterColor()
-                indicator = 2
+                colorOfClick = secondQuarterColor
             }
             if ((x < 0) && (y > 0)) {
                 changeThirdQuarterColor()
-                indicator = 3
+                colorOfClick = thirdQuarterColor
             }
             if ((x < 0) && (y < 0)) {
                 changeFourthQuarterColor()
-                indicator = 4
+                colorOfClick = fourthQuarterColor
             }
             invalidate()
         } else if (event.action == MotionEvent.ACTION_DOWN) {
             xyOfClick = "Мимо =)"
-            indicator = 6
+            colorOfClick = yellowColor
             invalidate()
         }
         return super.onTouchEvent(event)
     }
 
     fun coordinates() = xyOfClick
-    fun indicator() = indicator
-    fun firstQuarterColor() = firstQuarterColor
-    fun secondQuarterColor() = secondQuarterColor
-    fun thirdQuarterColor() = thirdQuarterColor
-    fun fourthQuarterColor() = fourthQuarterColor
+    fun getColorOfClick() = colorOfClick
 
     fun isVictory() = (firstQuarterColor == secondQuarterColor &&
             thirdQuarterColor == fourthQuarterColor &&

@@ -14,9 +14,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val customView: CustomButtonView = findViewById(R.id.customView)
-        customView.kp = object:myClicklListener{
-            override fun action() {
-                TODO("Not yet implemented")
+
+        customView.customListener = object : ICustomListener {
+            override fun notification(colorOfClick: Int, message: String?, isSnackBar: Boolean) {
+                if (isSnackBar) {
+                    val snackBar = Snackbar.make(customView,
+                            message.toString(),
+                            Snackbar.LENGTH_SHORT)
+                    snackBar.setTextColor(colorOfClick).show()
+                } else {
+                    Toast.makeText(applicationContext,
+                            customView.coordinates(),
+                            Toast.LENGTH_SHORT).show()
+                }
             }
         }
         val switchMaterial = findViewById<SwitchMaterial>(R.id.toastOrSnackBarSwitch)
@@ -26,30 +36,16 @@ class MainActivity : AppCompatActivity() {
                 Snackbar.make(customView,
                         "=== ПОЗДРАВЛЯЮ ВЫ ПОБЕДИЛИ ! ===",
                         Snackbar.LENGTH_LONG).setTextColor(ContextCompat.getColor(this,
-                        R.color.red)).show()
+                        R.color.white)).show()
             }
         }
 
         customView.setOnClickListener {
-            if (!switchMaterial.isChecked) {
-                Toast.makeText(applicationContext,
-                        customView.coordinates(),
-                        Toast.LENGTH_SHORT).show()
-                congratulation()
-            } else {
-                val snackBar = Snackbar.make(it, customView.coordinates().toString(),
-                        Snackbar.LENGTH_SHORT)
-                when (customView.indicator()) {
-                    1 -> snackBar.setTextColor(customView.firstQuarterColor())
-                    2 -> snackBar.setTextColor(customView.secondQuarterColor())
-                    3 -> snackBar.setTextColor(customView.thirdQuarterColor())
-                    4 -> snackBar.setTextColor(customView.fourthQuarterColor())
-                    5 -> snackBar.setTextColor(ContextCompat.getColor(this, R.color.white))
-                    6 -> snackBar.setTextColor(ContextCompat.getColor(this, R.color.yellow))
-                }
-                snackBar.show()
-                congratulation()
-            }
+            (customView.customListener as ICustomListener).notification(
+                    customView.getColorOfClick(),
+                    customView.coordinates(),
+                    switchMaterial.isChecked)
+            congratulation()
         }
     }
 }
