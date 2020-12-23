@@ -1,2 +1,3 @@
+include ':hw5_2'
 include ':app'
 rootProject.name = "Lesson1"
