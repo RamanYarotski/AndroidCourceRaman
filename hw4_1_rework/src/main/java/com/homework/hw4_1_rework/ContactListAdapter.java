@@ -16,15 +16,12 @@ import java.util.List;
 
 class ContactListAdapter extends
         RecyclerView.Adapter<ContactListAdapter.ContactViewHolder> implements Filterable {
-    private ArrayList<Contact> contactList;
-    private ArrayList<Contact> contactListFull;
+    private ArrayList<Contact> contactList = new ArrayList<>();
+    private ArrayList<Contact> contactListFull = new ArrayList<>();
     private MainActivity.ListContactActionListener listContactActionListener;
 
-    public ContactListAdapter(ArrayList<Contact> contactList,
-                              MainActivity.ListContactActionListener listContactActionListener) {
-        this.contactList = contactList;
+    public ContactListAdapter(MainActivity.ListContactActionListener listContactActionListener) {
         this.listContactActionListener = listContactActionListener;
-        contactListFull = new ArrayList<>(contactList);
     }
 
     @Override
@@ -47,6 +44,14 @@ class ContactListAdapter extends
     @Override
     public Filter getFilter() {
         return filter;
+    }
+
+    public void addItems(List<Contact> contacts) {
+        contactListFull.clear();
+        contactListFull.addAll(contacts);
+        contactList.clear();
+        contactList.addAll(contacts);
+        notifyDataSetChanged();
     }
 
     private Filter filter = new Filter() {

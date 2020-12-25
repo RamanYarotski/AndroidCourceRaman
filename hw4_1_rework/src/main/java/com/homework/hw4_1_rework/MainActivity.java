@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.recyclerView);
-        adapter = new ContactListAdapter(ContactList.getObjectContactList().getContactList(),
+        adapter = new ContactListAdapter(
                 new ListContactActionListener() {
                     @Override
                     public void onContactClicked(int number) {
@@ -68,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 123 && resultCode == Activity.RESULT_OK && data != null) {
-            adapter.notifyDataSetChanged();
+            adapter.addItems(ContactList.getObjectContactList().getContactList());
         } else if (requestCode == 456 && resultCode == Activity.RESULT_OK && data != null) {
-            adapter.notifyDataSetChanged();
+            adapter.addItems(ContactList.getObjectContactList().getContactList());
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
