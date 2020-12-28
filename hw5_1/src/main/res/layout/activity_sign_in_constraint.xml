@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="30dp"
+    android:paddingVertical="15dp">
+
+    <TextView
+        android:id="@+id/signInTextInSignInConstraint"
+        style="@style/SignInConstraintTextStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:text="@string/sign_in"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/emailInSignInConstraint"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1.5" />
+
+    <EditText
+        android:id="@+id/emailInSignInConstraint"
+        style="@style/SignInConstraintEditTextStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:autofillHints=""
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@id/passwordInSignInConstraint"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signInTextInSignInConstraint"
+        app:layout_constraintVertical_weight="0.8" />
+
+    <EditText
+        android:id="@+id/passwordInSignInConstraint"
+        style="@style/SignInConstraintEditTextStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:autofillHints=""
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/rememberInSignInInConstraint"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailInSignInConstraint"
+        app:layout_constraintVertical_weight="0.8" />
+
+    <CheckBox
+        android:id="@+id/rememberInSignInInConstraint"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="@string/remember"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/spaceInSignInConstraint"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordInSignInConstraint"
+        app:layout_constraintVertical_weight="1" />
+
+    <Button
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forgot_password"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rememberInSignInInConstraint"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Space
+        android:id="@+id/spaceInSignInConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/signInButtonInSignInConstraint"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rememberInSignInInConstraint"
+        app:layout_constraintVertical_weight="2" />
+
+    <Button
+        android:id="@+id/signInButtonInSignInConstraint"
+        android:theme="@style/ThemeOverlay.SignIn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/sign_in_button_sign_in"
+        android:text="@string/sign_in"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@+id/justSignInTextInSignInConstraint"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spaceInSignInConstraint"
+        app:layout_constraintVertical_weight="0.8" />
+
+    <TextView
+        android:id="@+id/justSignInTextInSignInConstraint"
+        style="@style/SignInConstraintTextStyle"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:gravity="center|bottom"
+        android:text="@string/just_sign_in"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signInButtonInSignInConstraint"
+        app:layout_constraintVertical_weight="1.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
