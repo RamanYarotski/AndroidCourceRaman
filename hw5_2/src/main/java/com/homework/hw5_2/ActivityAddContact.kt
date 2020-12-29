@@ -27,23 +27,20 @@ class ActivityAddContact : MainActivity() {
         }
         findViewById<View>(R.id.toolbarSaveButton).setOnClickListener {
             val resultIntent = Intent()
-            if (phoneButton.isChecked) {
-                ContactList.addContact(
-                        Contact(nameView.text.toString(),
-                                infoView.text.toString(),
-                                Contact.InfoType.PHONE_NUMBER))
-                resultIntent.putExtra(NEW_CONTACT, "Contact added")
-            } else if (emailButton.isChecked) {
-                ContactList.addContact(
-                        Contact(nameView.text.toString(),
-                                infoView.text.toString(),
-                                Contact.InfoType.EMAIL))
-                resultIntent.putExtra(NEW_CONTACT, "Contact added")
+            var iT: Contact.InfoType = Contact.InfoType.PHONE_NUMBER
+            if (emailButton.isChecked) {
+                iT = Contact.InfoType.EMAIL
             }
+            DBManager.openDB()
+            DBManager.addToDB(
+                    nameView.text.toString(),
+                    infoView.text.toString(),
+                    iT.toString())
+            resultIntent.putExtra(NEW_CONTACT, "Contact added")
             setResult(RESULT_OK, resultIntent)
-            finish()
             nameView.text = ""
             infoView.text = ""
+            finish()
         }
     }
 

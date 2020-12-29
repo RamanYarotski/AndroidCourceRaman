@@ -8,7 +8,6 @@ import android.widget.TextView
 class ActivityEditContact : MainActivity() {
     private lateinit var nameView: TextView
     private lateinit var infoView: TextView
-    private lateinit var contact: Contact
     private var contactNumber = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,16 +18,14 @@ class ActivityEditContact : MainActivity() {
         val intent = intent
         if (intent != null) {
             contactNumber = intent.getIntExtra(CONTACT_NUMBER, 0)
-            contact = ContactList.getContact(contactNumber)
+            DBManager.openDB()
+            val contact = DBManager.readDBContact(contactNumber)
             nameView.text = contact.name
             infoView.text = contact.info
         }
         findViewById<View>(R.id.toolbarEditSaveButton).setOnClickListener {
             val resultIntent = Intent()
-            ContactList.setContact(contactNumber,
-                    Contact(nameView.text.toString(),
-                            infoView.text.toString(),
-                            contact.infoType))
+            DBManager.updateInDB(contactNumber, nameView.text.toString(), infoView.text.toString())
             resultIntent.putExtra(MODIFIED_CONTACT, "Contact was changed")
             setResult(RESULT_OK, resultIntent)
             finish()

@@ -16,7 +16,6 @@ class Contact(
     }
 
     init {
-        this.infoType = infoType
         image = setImage(infoType)
     }
 

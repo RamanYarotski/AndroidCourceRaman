@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 open class MainActivity : AppCompatActivity() {
+    val DBManager = com.homework.hw5_2.db.DBManager(this)
     private lateinit var searchView: SearchView
     private lateinit var adapter: ContactListAdapter
     private lateinit var recyclerView: RecyclerView
@@ -21,22 +22,25 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         recyclerView = findViewById(R.id.recyclerView)
+        DBManager.openDB()
         adapter = ContactListAdapter(
                 object : ListContactActionListener {
                     override fun onContactClicked(number: Int) {
                         val intent = Intent(
                                 this@MainActivity, ActivityEditContact::class.java)
-                        intent.putExtra(CONTACT_NUMBER, number)
+                        intent.putExtra(CONTACT_NUMBER, number + 1)
                         startActivityForResult(intent, 456)
                     }
                 })
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+
         findViewById<View>(R.id.buttonAddContact).setOnClickListener {
             startActivityForResult(
                     Intent(this@MainActivity, ActivityAddContact::class.java),
                     123)
         }
+        adapter.addItems(DBManager.readDBData())
         searchView = findViewById(R.id.searchContact)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
@@ -52,17 +56,24 @@ open class MainActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        DBManager.openDB()
         if (requestCode == 123 && resultCode == RESULT_OK && data != null) {
-            adapter.addItems(ContactList.getContactList())
+            adapter.addItems(DBManager.readDBData())
         } else if (requestCode == 456 && resultCode == RESULT_OK && data != null) {
-            adapter.addItems(ContactList.getContactList())
+            adapter.addItems(DBManager.readDBData())
         }
         super.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        adapter.addItems(ContactList.getContactList())
+        DBManager.openDB()
+        adapter.addItems(DBManager.readDBData())
         super.onRestoreInstanceState(savedInstanceState)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        DBManager.closeDB()
     }
 
     companion object {
