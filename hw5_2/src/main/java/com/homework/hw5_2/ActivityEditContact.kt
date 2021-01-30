@@ -18,14 +18,14 @@ class ActivityEditContact : MainActivity() {
         val intent = intent
         if (intent != null) {
             contactNumber = intent.getIntExtra(CONTACT_NUMBER, 0)
-            DBManager.openDB()
-            val contact = DBManager.readDBContact(contactNumber)
+            dBManager.openDB()
+            val contact = dBManager.readDBContact(contactNumber)
             nameView.text = contact.name
             infoView.text = contact.info
         }
         findViewById<View>(R.id.toolbarEditSaveButton).setOnClickListener {
             val resultIntent = Intent()
-            DBManager.updateInDB(contactNumber, nameView.text.toString(), infoView.text.toString())
+            dBManager.updateInDB(contactNumber, nameView.text.toString(), infoView.text.toString())
             resultIntent.putExtra(MODIFIED_CONTACT, "Contact was changed")
             setResult(RESULT_OK, resultIntent)
             finish()

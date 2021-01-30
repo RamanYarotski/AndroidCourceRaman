@@ -1,7 +1,7 @@
 package com.homework.hw5_2
 
 class Contact(
-        var name: String, var info: String, var infoType: InfoType) {
+         var name: String, var info: String, var infoType: InfoType) {
 
     var image: Int
         private set

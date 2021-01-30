@@ -7,8 +7,8 @@ import com.homework.hw5_2.Contact
 
 class DBManager(val context: Context) {
     private lateinit var contact: Contact
-    val dbHelper = DbHelper(context)
-    var db: SQLiteDatabase? = null
+    private val dbHelper = DbHelper(context)
+    private var db: SQLiteDatabase? = null
 
     fun openDB() {
         db = dbHelper.writableDatabase

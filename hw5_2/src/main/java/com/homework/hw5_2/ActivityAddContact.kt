@@ -31,8 +31,8 @@ class ActivityAddContact : MainActivity() {
             if (emailButton.isChecked) {
                 iT = Contact.InfoType.EMAIL
             }
-            DBManager.openDB()
-            DBManager.addToDB(
+            dBManager.openDB()
+            dBManager.addToDB(
                     nameView.text.toString(),
                     infoView.text.toString(),
                     iT.toString())

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 open class MainActivity : AppCompatActivity() {
-    val DBManager = com.homework.hw5_2.db.DBManager(this)
+    protected val dBManager = com.homework.hw5_2.db.DBManager(this)
     private lateinit var searchView: SearchView
     private lateinit var adapter: ContactListAdapter
     private lateinit var recyclerView: RecyclerView
@@ -22,7 +22,7 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         recyclerView = findViewById(R.id.recyclerView)
-        DBManager.openDB()
+        dBManager.openDB()
         adapter = ContactListAdapter(
                 object : ListContactActionListener {
                     override fun onContactClicked(number: Int) {
@@ -40,7 +40,7 @@ open class MainActivity : AppCompatActivity() {
                     Intent(this@MainActivity, ActivityAddContact::class.java),
                     123)
         }
-        adapter.addItems(DBManager.readDBData())
+        adapter.addItems(dBManager.readDBData())
         searchView = findViewById(R.id.searchContact)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
@@ -56,24 +56,24 @@ open class MainActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        DBManager.openDB()
+        dBManager.openDB()
         if (requestCode == 123 && resultCode == RESULT_OK && data != null) {
-            adapter.addItems(DBManager.readDBData())
+            adapter.addItems(dBManager.readDBData())
         } else if (requestCode == 456 && resultCode == RESULT_OK && data != null) {
-            adapter.addItems(DBManager.readDBData())
+            adapter.addItems(dBManager.readDBData())
         }
         super.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        DBManager.openDB()
-        adapter.addItems(DBManager.readDBData())
+        dBManager.openDB()
+        adapter.addItems(dBManager.readDBData())
         super.onRestoreInstanceState(savedInstanceState)
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        DBManager.closeDB()
+        dBManager.closeDB()
     }
 
     companion object {
