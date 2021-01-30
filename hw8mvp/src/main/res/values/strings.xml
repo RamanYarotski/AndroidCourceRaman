@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">HW8MVP</string>
+    <string name="City">Minsk</string>
+    <string name="Temperature">Temperature</string>
+    <string name="Description">Description</string>
+    <string name="Time">Time</string>
+    <string name="SettingsButton">SettingsButton</string>
+    <string name="Degree">Degree</string>
+    <string name="Fahrenheit">Fahrenheit</string>
+    <string name="back">back</string>
+</resources>
