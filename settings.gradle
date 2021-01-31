@@ -1,4 +1,4 @@
-include ':hw8mvvm'
-include ':hw8mvp'
+include ':hw9mvvm'
+include ':hw9mvp'
 include ':app'
 rootProject.name = "Lesson1"

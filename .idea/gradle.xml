@@ -12,8 +12,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/hw8mvp" />
-            <option value="$PROJECT_DIR$/hw8mvvm" />
+            <option value="$PROJECT_DIR$/hw9mvp" />
+            <option value="$PROJECT_DIR$/hw9mvvm" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
