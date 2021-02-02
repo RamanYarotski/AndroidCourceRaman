@@ -40,6 +40,13 @@ open class MainActivity : AppCompatActivity() {
                     Intent(this@MainActivity, ActivityAddContact::class.java),
                     123)
         }
+
+        findViewById<View>(R.id.buttonSettings).setOnClickListener {
+            startActivityForResult(
+                    Intent(this@MainActivity, SettingsActivity::class.java),
+                    888)
+        }
+
         adapter.addItems(dBManager.readDBData())
         searchView = findViewById(R.id.searchContact)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {

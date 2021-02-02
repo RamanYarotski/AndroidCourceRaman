@@ -14,6 +14,8 @@ class DBManager(val context: Context) {
         db = dbHelper.writableDatabase
     }
 
+    fun countContacts():Int = readDBData().size
+
     fun addToDB(name: String, info: String, infoType: String) {
         val values = ContentValues().apply {
             put(DBClass.COLUMN_NAME_NAME, name)
