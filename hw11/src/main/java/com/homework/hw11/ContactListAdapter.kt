@@ -1,4 +1,5 @@
-package com.homework.hw5_2
+package com.homework.hw11
+
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,11 +9,11 @@ import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.homework.hw5_2.MainActivity.ListContactActionListener
+import com.homework.hw11.ContactListActivity.ListContactActionListener
 
-open class ContactListAdapter(private val listContactActionListener: ListContactActionListener)
+class ContactListAdapter(private val listContactActionListener: ListContactActionListener)
     : RecyclerView.Adapter<ContactListAdapter.ContactViewHolder>(), Filterable {
-    protected val contactList: ArrayList<Contact> = ArrayList()
+    private val contactList: ArrayList<Contact> = ArrayList()
     private val contactListFull: ArrayList<Contact> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
@@ -85,7 +86,6 @@ open class ContactListAdapter(private val listContactActionListener: ListContact
             }
         }
     }
-
 
 }
 

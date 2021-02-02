@@ -8,11 +8,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
+
 open class MainActivity : AppCompatActivity() {
-    protected val dBManager = com.homework.hw5_2.db.DBManager(this)
+    public val dBManager = com.homework.hw5_2.db.DBManager(this)
     private lateinit var searchView: SearchView
     private lateinit var adapter: ContactListAdapter
     private lateinit var recyclerView: RecyclerView
+    protected var list: ArrayList<Contact>? = null
 
     interface ListContactActionListener {
         fun onContactClicked(number: Int)
@@ -23,6 +25,8 @@ open class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         recyclerView = findViewById(R.id.recyclerView)
         dBManager.openDB()
+        list = dBManager.readDBData()
+
         adapter = ContactListAdapter(
                 object : ListContactActionListener {
                     override fun onContactClicked(number: Int) {
@@ -53,6 +57,7 @@ open class MainActivity : AppCompatActivity() {
                 return false
             }
         })
+        val o = ContactsContentProvider.Main
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -12,4 +12,5 @@
     <string name="search">search</string>
     <string name="contactInfo">contact info</string>
     <string name="contactImage">contact image</string>
+    <string name="contacts">contacts</string>
 </resources>

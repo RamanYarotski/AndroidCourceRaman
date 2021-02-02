@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 
-class ActivityEditContact : MainActivity() {
+open class ActivityEditContact : MainActivity() {
     private lateinit var nameView: TextView
     private lateinit var infoView: TextView
     private var contactNumber = 0
