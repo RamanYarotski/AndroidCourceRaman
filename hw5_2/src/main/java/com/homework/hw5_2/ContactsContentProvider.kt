@@ -34,7 +34,7 @@ class ContactsContentProvider : ContentProvider() {
                 val taskId: Long = ContactsContract.getContactId(uri)
                 queryBuilder.appendWhere(ContactsContract.Columns._ID + " = " + taskId)
             }
-            else -> throw IllegalArgumentException("Unknown URI: $uri")
+            else -> return null
         }
 
         val db: SQLiteDatabase? = mOpenHelper?.readableDatabase
@@ -43,15 +43,15 @@ class ContactsContentProvider : ContentProvider() {
                 null, null, sortOrder)
     }
 
-    override fun getType(uri: Uri): String {
+    override fun getType(uri: Uri): String? {
         return when (sUriMatcher.match(uri)) {
             CONTACTS -> ContactsContract.CONTENT_TYPE
             CONTACTS_ID -> ContactsContract.CONTENT_ITEM_TYPE
-            else -> throw IllegalArgumentException("Unknown URI: $uri")
+            else -> return null
         }
     }
 
-    override fun insert(uri: Uri, values: ContentValues?): Uri {
+    override fun insert(uri: Uri, values: ContentValues?): Uri? {
         val match = sUriMatcher.match(uri)
         val db: SQLiteDatabase?
         val returnUri: Uri
@@ -65,7 +65,7 @@ class ContactsContentProvider : ContentProvider() {
                 throw SQLException("Failed to insert: $uri")
             }
         } else {
-            throw IllegalArgumentException("Unknown URI: $uri")
+            return null
         }
         return returnUri
     }
