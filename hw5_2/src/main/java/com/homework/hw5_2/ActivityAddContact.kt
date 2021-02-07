@@ -34,7 +34,6 @@ class ActivityAddContact : MainActivity() {
         }
         findViewById<View>(R.id.toolbarSaveButton).setOnClickListener {
 
-//////////////////////////////////////////////////////////
             settingsActivity = SettingsActivity()
 
             val resultIntent = Intent()
@@ -55,7 +54,7 @@ class ActivityAddContact : MainActivity() {
             } else if (loadTask() == 2) {
                 val task2 = Task2(dBSize, name, info, infoType, applicationContext)
                 try {
-                    task2.startThreadAdd()
+                    task2.startThreadAdd().thenAcceptAsync{}
                 } catch (e: ExecutionException) {
                     e.printStackTrace()
                 } catch (e: InterruptedException) {

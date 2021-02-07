@@ -46,7 +46,7 @@ class ActivityEditContact : MainActivity() {
             } else if (loadTask() == 2) {
                 val task2 = Task2(name, applicationContext, position, info)
                 try {
-                    task2.startThreadEdit()
+                    task2.startThreadEdit().thenAcceptAsync{}
                 } catch (e: ExecutionException) {
                     e.printStackTrace()
                 } catch (e: InterruptedException) {
@@ -61,9 +61,9 @@ class ActivityEditContact : MainActivity() {
 
             resultIntent.putExtra(MODIFIED_CONTACT, "Contact was changed")
             setResult(RESULT_OK, resultIntent)
-            finish()
             nameView.text = ""
             infoView.text = ""
+            finish()
         }
 
         findViewById<View>(R.id.toolbarEditBackButton).setOnClickListener {

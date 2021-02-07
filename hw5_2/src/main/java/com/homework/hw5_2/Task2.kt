@@ -36,17 +36,17 @@ class Task2 {
     }
 
     @Throws(ExecutionException::class, InterruptedException::class)
-    fun startThreadAdd() {
+    fun startThreadAdd(): CompletableFuture<Void> {
         threadPoolExecutor = Executors.newFixedThreadPool(1) as ThreadPoolExecutor
         future = CompletableFuture.runAsync({ insertDB() }, threadPoolExecutor)
-        future.get()
+        return future
     }
 
     @Throws(ExecutionException::class, InterruptedException::class)
-    fun startThreadEdit() {
+    fun startThreadEdit(): CompletableFuture<Void> {
         threadPoolExecutor = Executors.newFixedThreadPool(1) as ThreadPoolExecutor
         future = CompletableFuture.runAsync({ updateDB() }, threadPoolExecutor)
-        future.get()
+        return future
     }
 
     private fun insertDB() {

@@ -36,17 +36,15 @@ class Task1 : Runnable {
     fun startThreadAdd() {
         threadPoolExecutor = Executors.newFixedThreadPool(1) as ThreadPoolExecutor
         threadPoolExecutor!!.submit(Task1(counter, name, info, infoType, context))
-        threadPoolExecutor!!.shutdown()
     }
 
     fun startThreadEdit() {
         threadPoolExecutor = Executors.newFixedThreadPool(1) as ThreadPoolExecutor
         threadPoolExecutor!!.submit(Task1(name, context, position, info))
-        threadPoolExecutor!!.shutdown()
     }
 
     @SuppressLint("HandlerLeak")
-    var handler: Handler = object : Handler() {
+    val handler: Handler = object : Handler() {
         override fun handleMessage(msg: Message) {
             if (msg.what == 1) {
                 insertDB()

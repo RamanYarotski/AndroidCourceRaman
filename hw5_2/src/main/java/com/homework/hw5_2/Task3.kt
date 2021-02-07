@@ -8,6 +8,8 @@ import io.reactivex.rxjava3.disposables.Disposable
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.ThreadPoolExecutor
 import java.util.function.Supplier
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 
 class Task3 {
@@ -37,7 +39,7 @@ class Task3 {
     }
 
     fun startThreadAdd() {
-        Observable.just("one")
+        Observable.just("one").subscribeOn(Schedulers.io())
                 .subscribe(observer)
     }
 
