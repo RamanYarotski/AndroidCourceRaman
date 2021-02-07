@@ -38,17 +38,15 @@ class Task3 {
         this.info = info
     }
 
-    fun startThreadAdd() {
-        Observable.just("one").subscribeOn(Schedulers.io())
-                .subscribe(observer)
+    fun startThreadAdd(): @NonNull Observable<String>? {
+    return Observable.just("one").subscribeOn(Schedulers.io())
     }
 
-    fun startThreadEdit() {
-        Observable.just("two")
-                .subscribe(observer)
+    fun startThreadEdit(): @NonNull Observable<String>?  {
+        return Observable.just("two").subscribeOn(Schedulers.io())
     }
 
-    private var observer: Observer<Any?> = object : Observer<Any?> {
+    var observer: Observer<Any?> = object : Observer<Any?> {
         override fun onSubscribe(d: @NonNull Disposable?) {}
         override fun onNext(o: Any?) {
             if (o === "one") {

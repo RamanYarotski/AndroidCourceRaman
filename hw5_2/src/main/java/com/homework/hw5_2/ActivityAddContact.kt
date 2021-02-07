@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.RadioButton
 import android.widget.TextView
 import android.widget.Toast
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import java.util.concurrent.ExecutionException
 
 class ActivityAddContact : MainActivity() {
@@ -63,7 +64,7 @@ class ActivityAddContact : MainActivity() {
                 Toast.makeText(this@ActivityAddContact, "The object has been added using 2 approach", Toast.LENGTH_SHORT).show()
             } else if (loadTask() == 3) {
                 val task3 = Task3(dBSize, name, info, infoType, applicationContext)
-                task3.startThreadAdd()
+                task3.startThreadAdd()?.observeOn(AndroidSchedulers.mainThread())?.subscribe(task3.observer)
                 Toast.makeText(this@ActivityAddContact, "The object is added using the RX Java", Toast.LENGTH_SHORT).show()
             }
 
@@ -74,6 +75,7 @@ class ActivityAddContact : MainActivity() {
             finish()
         }
     }
+
 
     private var radioButtonClickListener: View.OnClickListener = View.OnClickListener { v ->
         val rb = v as RadioButton

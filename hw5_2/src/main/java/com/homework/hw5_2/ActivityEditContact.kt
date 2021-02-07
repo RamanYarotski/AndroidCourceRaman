@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import java.util.concurrent.ExecutionException
 
 
@@ -55,7 +56,7 @@ class ActivityEditContact : MainActivity() {
                 Toast.makeText(this@ActivityEditContact, "Contact change with 2 approach", Toast.LENGTH_SHORT).show()
             } else if (loadTask() == 3) {
                 val task3 = Task3(name, applicationContext, position, info)
-                task3.startThreadEdit()
+                task3.startThreadEdit()?.observeOn(AndroidSchedulers.mainThread())?.subscribe(task3.observer)
                 Toast.makeText(this@ActivityEditContact, "Contact change using the RX Java", Toast.LENGTH_SHORT).show()
             }
 

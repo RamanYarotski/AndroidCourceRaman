@@ -38,9 +38,9 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
-     private fun saveTask(task: Int) {
+    private fun saveTask(task: Int) {
         sPref = getSharedPreferences("SettingsActivity", MODE_PRIVATE)
-        val ed =sPref.edit()
+        val ed = sPref.edit()
         ed.putInt("TASK", task)
         ed.apply()
     }
