@@ -45,32 +45,35 @@ public class WeatherViewModel extends AndroidViewModel {
         error.setValue(null);
     }
 
-    public void insertWeathers(List<ListWeather> listWeathers) {
-        new insertWeatherTask().execute(listWeathers);
-    }
-
-    private static class insertWeatherTask extends AsyncTask<List<ListWeather>, Void, Void> {
-
-        @Override
-        protected Void doInBackground(List<ListWeather>... lists) {
-            if (lists != null && lists.length > 0) {
-                db.listWeatherDao().InsertWeathers(lists[0]);
+    @SafeVarargs
+    private final void insertWeatherThread(List<ListWeather>... lists) {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    if (lists != null && lists.length > 0) {
+                        db.listWeatherDao().InsertWeathers(lists[0]);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
-            return null;
-        }
+        });
+        thread.start();
     }
 
-    public void deleteAllWeathers() {
-        new deleteAllWeathersTask().execute();
-    }
-
-    private static class deleteAllWeathersTask extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            db.listWeatherDao().deleteAllWeathers();
-            return null;
-        }
+    private void deleteAllWeathersThread() {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    db.listWeatherDao().deleteAllWeathers();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();
     }
 
     public void showInfoCelsius() {
@@ -82,8 +85,8 @@ public class WeatherViewModel extends AndroidViewModel {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(mainWeather -> {
-                    deleteAllWeathers();
-                    insertWeathers(mainWeather.getListWeathers());
+                    deleteAllWeathersThread();
+                    insertWeatherThread(mainWeather.getListWeathers());
                 }, throwable -> error.setValue(throwable));
         compositeDisposable.add(disposable);
     }
@@ -97,8 +100,8 @@ public class WeatherViewModel extends AndroidViewModel {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(mainWeather -> {
-                    deleteAllWeathers();
-                    insertWeathers(mainWeather.getListWeathers());
+                    deleteAllWeathersThread();
+                    insertWeatherThread(mainWeather.getListWeathers());
                 }, throwable -> error.setValue(throwable));
         compositeDisposable.add(disposable);
     }

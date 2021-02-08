@@ -44,14 +44,14 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
 
-    void saveBoolean(boolean temperatureCheck) {
+    private void saveBoolean(boolean temperatureCheck) {
         sPref = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor ed = sPref.edit();
         ed.putBoolean("ISCHEKED", temperatureCheck);
         ed.apply();
     }
 
-    public boolean loadBoolean() {
+    private boolean loadBoolean() {
         sPref = getPreferences(MODE_PRIVATE);
         this.temperatureCheck = sPref.getBoolean("ISCHEKED", false);
         return temperatureCheck;
