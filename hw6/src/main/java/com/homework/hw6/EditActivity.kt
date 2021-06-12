@@ -36,8 +36,8 @@ class EditActivity : AppCompatActivity() {
 
         val editFileButton = findViewById<Button>(R.id.editFileButton)
         editFileButton.setOnClickListener {
-            val sharedPrefs = getPreferences(Context.MODE_PRIVATE)
-            val isSharedPrefChecked = sharedPrefs.getBoolean("IS_SHARED_STORAGE", false)
+            val sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE)
+            val isSharedPrefChecked = sharedPref.getBoolean(getString(R.string.preference_file_key), false)
             val resultIntent = Intent()
             file.delete()
             val editedFile = if (isSharedPrefChecked) {

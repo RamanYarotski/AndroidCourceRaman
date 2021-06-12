@@ -17,8 +17,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.io.File
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.create_file_dialog.view.*
+import kotlinx.android.synthetic.main.activity_main.newFileButton
+import kotlinx.android.synthetic.main.activity_main.recyclerView
+import kotlinx.android.synthetic.main.activity_main.settingsButton
+import kotlinx.android.synthetic.main.create_file_dialog.view.fileNameEditText
+
 
 private const val SETTINGS_CODE = 741
 
@@ -64,12 +67,13 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == SETTINGS_CODE && resultCode == Activity.RESULT_OK && data != null) {
-            val sharedPrefs = getPreferences(Context.MODE_PRIVATE)
-            val editor = sharedPrefs.edit()
-            if (data.getBooleanExtra("IS_SHARED_STORAGE", false)) {
-                editor.putBoolean("IS_SHARED_STORAGE", true)
+            val sharedPref = getSharedPreferences(getString(R.string.preference_file_key),
+                    Context.MODE_PRIVATE)
+            val editor = sharedPref.edit()
+            if (data.getBooleanExtra(getString(R.string.preference_file_key), false)) {
+                editor.putBoolean(getString(R.string.preference_file_key), true)
             } else {
-                editor.putBoolean("IS_SHARED_STORAGE", false)
+                editor.putBoolean(getString(R.string.preference_file_key), false)
             }
             editor.apply()
         }
@@ -91,7 +95,8 @@ class MainActivity : AppCompatActivity() {
                     val counter = 0
                     val fileName = view.fileNameEditText.text.toString()
                     val checkedFileName: String = validateFileName(fileName, counter)
-                    filesMap[checkedFileName] = if (getPreferences(Context.MODE_PRIVATE).getBoolean("IS_SHARED_STORAGE", false)) {
+                    filesMap[checkedFileName] = if (getPreferences(Context.MODE_PRIVATE)
+                                    .getBoolean(getString(R.string.preference_file_key), false)) {
                         File(externalCacheDir, "$checkedFileName.txt")
                     } else {
                         File(filesDir, "$checkedFileName.txt")
